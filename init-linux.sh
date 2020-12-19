@@ -37,6 +37,9 @@ echo "Install create-elm-app"
 sudo npm install -g create-elm-app
 sudo create-elm-app temp1
 create-elm-app temp2
+cd temp2
+sudo elm-app test
+cd ..
 
 echo "===================="
 echo "Clean-up"
