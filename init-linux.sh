@@ -3,11 +3,6 @@
 # copy/paste the following line
 # mv /mnt/c/Users/antoi/Desktop/init-linux.sh ~/init-linux.sh && sh ~/init-linux.sh
 
-# haskell projects:
-# create new file hie.yaml with content:
-# cradle:
-#   stack:
-
 # If localhost is unreachable from windows
 # (from linux) ip addr | grep eth0
 # copy the ip after 'inet'
@@ -19,47 +14,46 @@ mkdir init-linux-tmp
 cd init-linux-tmp
 
 echo "===================="
-echo "Install npm"
+echo "Upgrade apt"
 sudo apt update
 echo y | sudo apt upgrade
-echo y | sudo apt install npm 
+
+echo "===================="
+echo "Install pip"
+echo y | sudo apt install python3-pip
+sudo pip3 --version
+sudo python3 --version
+pip3 --version
+python3 --version
+
+echo "===================="
+echo "Install npm"
+sudo chown -R $(whoami) /usr/local/bin /usr/local/lib /usr/local/include /usr/local/share
+echo y | sudo apt install npm
+npm install -g npm
+npm --version
 
 echo "===================="
 echo "Install elm"
-sudo npm install -g elm
-sudo elm --version
+npm install -g elm
 elm --version
 
 echo "===================="
 echo "Install elm-format"
-sudo npm install -g elm-format
-sudo elm-format -h
+npm install -g elm-format
 elm-format -h
 
 echo "===================="
 echo "Install elm-test"
-sudo npm install -g elm-test
-sudo elm-test --version
+npm install -g elm-test
 elm-test --version
 
 echo "===================="
 echo "Install create-elm-app"
-sudo npm install -g create-elm-app
-sudo create-elm-app temp1
+npm install -g create-elm-app
 create-elm-app temp2
 cd temp2
 sudo elm-app test
-cd ..
-
-echo "===================="
-echo "Install haskell stack"
-wget -qO- https://get.haskellstack.org/ | sh
-echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
-stack update
-stack upgrade
-stack new temp3
-cd temp3
-stack test
 cd ..
 
 echo "===================="
