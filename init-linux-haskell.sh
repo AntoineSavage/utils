@@ -26,6 +26,7 @@ stack upgrade
 stack new temp3
 cd temp3
 stack test
+stack install hspec QuickCheck sensei servant parsec
 cd ..
 
 echo "===================="
