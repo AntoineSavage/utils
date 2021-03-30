@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # copy/paste the following line
-# wget https://raw.githubusercontent.com/AntoineSavage/utils/main/init-linux-haskell.sh && sh init-linux-haskell.sh
+# wget https://raw.githubusercontent.com/AntoineSavage/utils/main/init-linux-haskell.sh && sudo sh init-linux-haskell.sh
 
 # haskell projects:
 # create new file hie.yaml with content:
@@ -15,7 +15,7 @@
 
 echo "===================="
 echo "Run init-linux"
-wget https://raw.githubusercontent.com/AntoineSavage/utils/main/init-linux.sh && sh init-linux.sh
+sudo wget https://raw.githubusercontent.com/AntoineSavage/utils/main/init-linux.sh && sh init-linux.sh
 
 echo "===================="
 echo "Create temp directory"
