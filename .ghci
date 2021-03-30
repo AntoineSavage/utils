@@ -1,3 +1,6 @@
+-- limit writing to this file
+-- chmod go-w . .ghci
+
 :set -isrc -itest
 
 -- for generated source files
