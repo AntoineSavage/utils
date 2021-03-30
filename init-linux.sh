@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # copy/paste the following line
-# wget https://raw.githubusercontent.com/AntoineSavage/utils/main/init-linux.sh && sh init-linux.sh
+# sudo wget https://raw.githubusercontent.com/AntoineSavage/utils/main/init-linux.sh && sh init-linux.sh
 
 # If localhost is unreachable from windows
 # (from linux) ip addr | grep eth0
