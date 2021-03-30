@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # copy/paste the following line
-# mv /mnt/c/Users/antoi/Desktop/init-linux.sh ~/init-linux.sh && sh ~/init-linux.sh
+# wget "https://raw.githubusercontent.com/AntoineSavage/utils/main/init-linux.sh?token=AATEUFTT4BVWPG4NEJMA6UTAMNZ7G" -O init-linux.sh
 
 # If localhost is unreachable from windows
 # (from linux) ip addr | grep eth0
