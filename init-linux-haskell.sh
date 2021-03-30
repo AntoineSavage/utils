@@ -3,11 +3,6 @@
 # copy/paste the following line
 # wget https://raw.githubusercontent.com/AntoineSavage/utils/main/init-linux-haskell.sh && sudo sh init-linux-haskell.sh
 
-# haskell projects:
-# create new file hie.yaml with content:
-# cradle:
-#   stack:
-
 # If localhost is unreachable from windows
 # (in linux) ip addr | grep eth0
 # copy the ip after 'inet'
