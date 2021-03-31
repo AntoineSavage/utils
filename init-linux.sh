@@ -3,6 +3,14 @@
 # copy/paste the following line
 # sudo wget https://raw.githubusercontent.com/AntoineSavage/utils/main/init-linux.sh && sh init-linux.sh
 
+# Elm format-on-save in vscode:
+# Ctrl+Shift+P, open settings (JSON)
+#
+# Add the following key:
+# "[elm]": {
+#     "editor.formatOnSave": true
+# },
+
 # If localhost is unreachable from windows
 # (from linux) ip addr | grep eth0
 # copy the ip after 'inet'
