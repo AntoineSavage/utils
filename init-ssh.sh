@@ -10,8 +10,10 @@
 # Make sure to enter a strong password
 ssh-keygen -t rsa -b 4096 -C "antoine.savage@github.com"
 
-# Run this line if no ssh-agent is currently running
-# eval `ssh-agent -s`
+if ! pgrep -x "ssh-agent" > /dev/null
+then eval `ssh-agent -s`
+fi
+
 ssh-add ~/.ssh/id_rsa
 
 # Clean-up
