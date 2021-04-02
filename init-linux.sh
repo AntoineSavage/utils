@@ -25,6 +25,7 @@ git config --global user.email "antoine.savage@gmail.com"
 
 echo "===================="
 echo "Create temp directory"
+rm -rf init-linux-tmp
 mkdir init-linux-tmp
 cd init-linux-tmp
 
@@ -105,5 +106,5 @@ echo "===================="
 echo "Clean-up"
 cd ..
 sudo apt autoremove
-sudo rm -rf init-linux-tmp
+rm -rf init-linux-tmp
 rm init-linux.sh
