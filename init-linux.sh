@@ -65,6 +65,25 @@ sudo elm-app test
 cd ..
 
 echo "===================="
+echo "Install haskell stack"
+wget -qO- https://get.haskellstack.org/ | sh
+echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
+stack update
+stack upgrade
+stack new temp3
+cd temp3
+stack test
+stack install hspec QuickCheck sensei servant parsec
+cd ..
+
+echo "===================="
+echo "Install postgres"
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo apt-get update
+echo y | sudo apt-get install postgresql
+
+echo "===================="
 echo "Clean-up"
 cd ..
 sudo rm -rf init-linux-tmp
