@@ -99,15 +99,7 @@ echo y | sudo apt-get install postgresql zip unzip
 
 echo "===================="
 echo "Install postgres sample db"
-sudo su -c "\
-    pg_ctlcluster 13 main start \
-    psql -c 'create database dvdrental;' \
-    curl -O https://sp.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip \
-    unzip dvdrental.zip \
-    rm dvdrental.zip \
-    pg_restore --dbname=dvdrental --verbose dvdrental.tar \
-    rm dvdrental.tar \
-    " - postgres
+sudo su -c "wget -q https://raw.githubusercontent.com/AntoineSavage/utils/main/init-postgres.sh && sh init-postgres.sh" - postgres
 
 echo "===================="
 echo "Clean-up"
