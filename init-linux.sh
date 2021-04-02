@@ -106,3 +106,4 @@ echo "===================="
 echo "Clean-up"
 cd ..
 sudo rm -rf init-linux-tmp
+rm init-linux.sh
