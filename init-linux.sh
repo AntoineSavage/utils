@@ -85,7 +85,6 @@ echo "===================="
 echo "Install postgres"
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 wget -qO - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-sudo apt-get update
 echo y | sudo apt-get install postgresql zip unzip
 
 echo "===================="
