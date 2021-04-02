@@ -75,6 +75,7 @@ cd ..
 echo "===================="
 echo "Install haskell stack"
 echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
+source ~/.bashrc
 wget -qO - https://get.haskellstack.org/ | sh
 stack update
 stack upgrade
@@ -94,7 +95,7 @@ echo y | sudo apt-get install postgresql zip unzip
 
 echo "===================="
 echo "Install postgres sample db"
-sudo /bin/su -c "\
+sudo su -c "\
     pg_ctlcluster 13 main start \
     psql -c 'create database dvdrental;' \
     curl -O https://sp.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip \
