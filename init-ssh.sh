@@ -10,3 +10,4 @@
 ssh-keygen -t rsa -b 4096 -C "antoine.savage@github.com"
 eval `ssh-agent -s`
 ssh-add ~/.ssh/id_rsa
+rm init-ssh.sh
