@@ -72,7 +72,6 @@ cd ..
 
 echo "===================="
 echo "Install haskell stack"
-sudo apt-get install libtinfo-dev 
 echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
 wget -qO - https://get.haskellstack.org/ | sh
@@ -85,6 +84,7 @@ sed -i 's/#    copyright://g' ~/.stack/config.yaml
 stack new temp3
 cd temp3
 stack test
+echo y | sudo apt-get install libtinfo-dev
 stack install aeson async doctest hspec parsec QuickCheck sensei servant stm wai wai-websockets warp websockets
 cd ..
 
