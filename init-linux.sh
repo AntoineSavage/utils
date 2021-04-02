@@ -84,7 +84,7 @@ sudo apt-get update
 echo y | sudo apt-get install postgresql zip unzip
 
 echo "===================="
-echo "Install postgres sample databse"
+echo "Install postgres sample db"
 sudo /bin/su -c "\
     pg_ctlcluster 13 main start \
     psql -c 'create database dvdrental;' \
