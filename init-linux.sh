@@ -37,8 +37,6 @@ echo y | sudo apt upgrade
 echo "===================="
 echo "Install pip"
 echo y | sudo apt install python3-pip
-sudo pip3 --version
-sudo python3 --version
 pip3 --version
 python3 --version
 
@@ -69,7 +67,7 @@ echo "Install create-elm-app"
 npm install -g create-elm-app
 create-elm-app temp2
 cd temp2
-sudo elm-app test
+elm-app test
 cd ..
 
 echo "===================="
