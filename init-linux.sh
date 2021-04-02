@@ -41,10 +41,10 @@ python3 --version
 
 echo "===================="
 echo "Install npm"
-sudo chown -R $(whoami) /usr/local/bin /usr/local/lib /usr/local/include /usr/local/share
 echo y | sudo apt install npm
 npm install -g npm
 npm --version
+sudo chown -R $(whoami) /usr/local/bin /usr/local/lib /usr/local/include /usr/local/share
 
 echo "===================="
 echo "Install elm"
