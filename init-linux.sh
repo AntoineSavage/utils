@@ -71,8 +71,8 @@ cd ..
 
 echo "===================="
 echo "Install haskell stack"
-wget -qO - https://get.haskellstack.org/ | sh
 echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
+wget -qO - https://get.haskellstack.org/ | sh
 stack update
 stack upgrade
 stack new temp3
