@@ -17,6 +17,11 @@
 # it's the same ip displayed by elm-app start
 
 echo "===================="
+echo "Configure git"
+git config user.name "Antoine Savage"
+git config user.email "antoine.savage@gmail.com"
+
+echo "===================="
 echo "Create temp directory"
 mkdir init-linux-tmp
 cd init-linux-tmp
