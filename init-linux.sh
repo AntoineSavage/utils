@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # copy/paste the following line
-# wget -qO - https://raw.githubusercontent.com/AntoineSavage/utils/main/init-linux.sh | sudo sh
+# wget -qO - https://raw.githubusercontent.com/AntoineSavage/utils/main/init-linux.sh | sh
 
 # Elm format-on-save in vscode:
 # Ctrl+Shift+P, open settings (JSON)
@@ -15,6 +15,8 @@
 # (from linux) ip addr | grep eth0
 # copy the ip after 'inet'
 # it's the same ip displayed by elm-app start
+
+sudo echo ''
 
 echo "===================="
 echo "Configure git"
