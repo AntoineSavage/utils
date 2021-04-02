@@ -74,13 +74,13 @@ echo "===================="
 echo "Install haskell stack"
 echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
+wget -qO - https://get.haskellstack.org/ | sh
+stack update
+stack upgrade
 sed -i 's/#    author-name:/    author-name: Antoine Savage/g' ~/.stack/config.yaml
 sed -i 's/#    author-email:/    author-email: antoine.savage@gmail.com/g' ~/.stack/config.yaml
 sed -i 's/#    github-username:/    github-username: AntoineSavage/g' ~/.stack/config.yaml
 sed -i 's/#    copyright://g' ~/.stack/config.yaml
-wget -qO - https://get.haskellstack.org/ | sh
-stack update
-stack upgrade
 stack new temp3
 cd temp3
 stack test
