@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # copy/paste the following line
-# sudo wget https://raw.githubusercontent.com/AntoineSavage/utils/main/init-linux.sh | sudo sh
+# wget https://raw.githubusercontent.com/AntoineSavage/utils/main/init-linux.sh && sudo sh init-linux.sh
 
 # Elm format-on-save in vscode:
 # Ctrl+Shift+P, open settings (JSON)
@@ -84,7 +84,7 @@ cd ..
 echo "===================="
 echo "Install postgres"
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
-wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+wget -qO - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 sudo apt-get update
 echo y | sudo apt-get install postgresql zip unzip
 
@@ -99,8 +99,6 @@ sudo /bin/su -c "\
     pg_restore --dbname=dvdrental --verbose dvdrental.tar \
     rm dvdrental.tar \
     " - postgres
-
-
 
 echo "===================="
 echo "Clean-up"
