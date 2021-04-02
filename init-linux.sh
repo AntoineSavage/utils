@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # copy/paste the following line
-# wget -qO - https://raw.githubusercontent.com/AntoineSavage/utils/main/init-linux.sh | sh
+# wget -q https://raw.githubusercontent.com/AntoineSavage/utils/main/init-linux.sh && sh init-linux.sh
 
 # Elm format-on-save in vscode:
 # Ctrl+Shift+P, open settings (JSON)
