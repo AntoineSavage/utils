@@ -44,6 +44,7 @@ python3 --version
 echo "===================="
 echo "Install npm"
 echo y | sudo apt install npm
+sudo chown -R $(whoami) /usr/local/bin /usr/local/lib /usr/local/include /usr/local/share
 npm install -g npm
 npm --version
 sudo chown -R $(whoami) /usr/local/bin /usr/local/lib /usr/local/include /usr/local/share
