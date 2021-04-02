@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # copy/paste the following line
-# wget https://raw.githubusercontent.com/AntoineSavage/utils/main/init-linux-haskell.sh && sudo sh init-linux-haskell.sh
+# wget https://raw.githubusercontent.com/AntoineSavage/utils/main/haskell/init-linux-haskell.sh && sudo sh init-linux-haskell.sh
 
 # If localhost is unreachable from windows
 # (in linux) ip addr | grep eth0
