@@ -72,6 +72,7 @@ cd ..
 
 echo "===================="
 echo "Install haskell stack"
+sudo apt-get install libtinfo-dev 
 echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
 wget -qO - https://get.haskellstack.org/ | sh
