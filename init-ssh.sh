@@ -7,7 +7,12 @@
 # Run: cat ~/.ssh/id_rsa.pub
 # Copy/paste the output in the browser window
 
+# Make sure to enter a strong password
 ssh-keygen -t rsa -b 4096 -C "antoine.savage@github.com"
-eval `ssh-agent -s`
+
+# Run this line if no ssh-agent is currently running
+# eval `ssh-agent -s`
 ssh-add ~/.ssh/id_rsa
+
+# Clean-up
 rm init-ssh.sh
