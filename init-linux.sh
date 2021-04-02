@@ -107,5 +107,6 @@ sudo /bin/su -c "\
 echo "===================="
 echo "Clean-up"
 cd ..
+sudo apt autoremove
 sudo rm -rf init-linux-tmp
 rm init-linux.sh
