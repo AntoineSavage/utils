@@ -81,7 +81,21 @@ echo "Install postgres"
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 sudo apt-get update
-echo y | sudo apt-get install postgresql
+echo y | sudo apt-get install postgresql zip unzip
+
+echo "===================="
+echo "Install postgres sample databse"
+sudo /bin/su -c "\
+    pg_ctlcluster 13 main start \
+    psql -c 'create database dvdrental;' \
+    curl -O https://sp.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip \
+    unzip dvdrental.zip \
+    rm dvdrental.zip \
+    pg_restore --dbname=dvdrental --verbose dvdrental.tar \
+    rm dvdrental.tar \
+    " - postgres
+
+
 
 echo "===================="
 echo "Clean-up"
