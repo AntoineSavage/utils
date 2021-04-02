@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # copy/paste the following line:
-# wget https://raw.githubusercontent.com/AntoineSavage/utils/main/init-ssh.sh && sh init-ssh.sh
+# wget -qO - https://raw.githubusercontent.com/AntoineSavage/utils/main/init-ssh.sh | sh
 
 # Then go to: https://github.com/settings/ssh/new
 # Run: cat ~/.ssh/id_rsa.pub
