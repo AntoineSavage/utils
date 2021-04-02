@@ -18,8 +18,8 @@
 
 echo "===================="
 echo "Configure git"
-git config user.name "Antoine Savage"
-git config user.email "antoine.savage@gmail.com"
+git config --global user.name "Antoine Savage"
+git config --global user.email "antoine.savage@gmail.com"
 
 echo "===================="
 echo "Create temp directory"
