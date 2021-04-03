@@ -21,11 +21,8 @@
 # copy the ip after 'inet'
 # it's the same ip displayed by elm-app start
 
-if [ `whoami` = 'root' ];
-then
-        echo "This program must NOT be run as 'sudo'"
-        exit
-fi
+# Some operations are user-specific
+if [ `whoami` = 'root' ]; then echo "This program must NOT be run as 'sudo'"; exit; fi
 
 echo "===================="
 echo "Getting authorization"
