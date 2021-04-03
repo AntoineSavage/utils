@@ -107,7 +107,7 @@ rm -rf temp
 
 echo "===================="
 echo "Install haskell"
-wget -qO - https://get.haskellstack.org/ | sh
+wget -qO - https://get.haskellstack.org/ | sudo sh
 stack update
 stack upgrade
 sed -i 's/#    author-name:/    author-name: Antoine Savage/g' ~/.stack/config.yaml
