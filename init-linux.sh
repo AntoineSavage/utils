@@ -79,7 +79,7 @@ echo y | sudo apt upgrade
 
 echo "===================="
 echo "Install pip and npm"
-echo y | sudo apt install python3-pip npm libtinfo-dev zip unzip
+sudo apt install -y python3-pip npm zip unzip libtinfo-dev libffi-dev libgmp-dev
 npm install -g npm
 
 echo "===================="
