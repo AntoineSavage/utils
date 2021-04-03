@@ -79,7 +79,8 @@ npm --version
 
 echo "===================="
 echo "Install elm modules"
-npm install -g elm elm-format elm-test create-elm-app
+npm install -g elm elm-format elm-test
+npm install -g create-elm-app # must be installed separately
 
 echo "===================="
 echo "Test elm modules"
