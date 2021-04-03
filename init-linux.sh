@@ -113,7 +113,7 @@ echo "===================="
 echo "Install haskell"
 wget https://get.haskellstack.org/stable/linux-x86_64.tar.gz
 gzip -d linux-x86_64.tar.gz
-tar -xvf linux*.gz
+tar -xvf linux-x86_64.tar
 sudo install -c -o 0 -g 0 -m 0755 stack*linux*/stack /usr/local/bin
 stack update
 stack upgrade
