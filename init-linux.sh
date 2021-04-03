@@ -79,7 +79,7 @@ echo y | sudo apt upgrade
 
 echo "===================="
 echo "Install dependency packages"
-sudo apt install -y zip unzip libtinfo-dev libffi-dev libgmp-dev g++ gcc make zlib1g-dev
+sudo apt install -y zip unzip libtinfo-dev g++ gcc libc6-dev libffi-dev libgmp-dev make xz-utils zlib1g-dev git gnupg netbase
 
 echo "===================="
 echo "Install pip and npm"
@@ -111,7 +111,10 @@ rm -rf temp
 
 echo "===================="
 echo "Install haskell"
-wget -qO - https://get.haskellstack.org/ | sh
+wget https://get.haskellstack.org/stable/linux-x86_64.tar.gz
+gzip -d linux-x86_64.tar.gz
+tar -xvf linux*.gz
+sudo install -c -o 0 -g 0 -m 0755 stack*linux*/stack /usr/local/bin
 stack update
 stack upgrade
 sed -i 's/#    author-name:/    author-name: Antoine Savage/g' ~/.stack/config.yaml
