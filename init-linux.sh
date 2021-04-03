@@ -3,13 +3,18 @@
 # copy/paste the following line
 # wget -q https://raw.githubusercontent.com/AntoineSavage/utils/main/init-linux.sh && sh init-linux.sh
 
+# Add SSH key to github account
+# https://github.com/settings/ssh/new
+# cat ~/.ssh/id_ed25519.pub
+
 # Elm format-on-save in vscode:
 # Ctrl+Shift+P, open settings (JSON)
-#
 # Add the following key:
 # "[elm]": {
 #     "editor.formatOnSave": true
 # },
+
+# stack install aeson async doctest hspec parsec QuickCheck sensei servant stm wai wai-websockets warp websockets
 
 # If localhost is unreachable from windows
 # (from linux) ip addr | grep eth0
@@ -17,6 +22,29 @@
 # it's the same ip displayed by elm-app start
 
 sudo echo ''
+
+echo "===================="
+echo "Configure ~/.bashrc"
+echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
+
+echo 'if ! pgrep -x "ssh-agent" > /dev/null' >> ~/.bashrc
+echo 'then eval `ssh-agent -s`' >> ~/.bashrc
+echo 'fi' >> ~/.bashrc
+
+source ~/.bashrc
+
+echo "===================="
+echo "Configure SSH for github"
+echo "Use default file location"
+echo "Use a strong password!"
+ssh-keygen -t ed25519 -C "antoine.savage@github.com"
+chmod 600 ~/.ssh/id_ed25519
+chmod 600 ~/.ssh/id_ed25519.pub
+ssh-add ~/.ssh/id_ed25519
+
+echo "===================="
+echo "Configure npm folder ownership"
+sudo chown -R $(whoami) /usr/local/bin /usr/local/lib /usr/local/include /usr/local/share
 
 echo "===================="
 echo "Configure git"
@@ -35,45 +63,32 @@ sudo apt update
 echo y | sudo apt upgrade
 
 echo "===================="
-echo "Install pip"
-echo y | sudo apt install python3-pip
-pip3 --version
-python3 --version
+echo "Install pip and npm"
+echo y | sudo apt install python3-pip npm libtinfo-dev zip unzip
+npm install -g npm
 
 echo "===================="
-echo "Install npm"
-echo y | sudo apt install npm
-sudo chown -R $(whoami) /usr/local/bin /usr/local/lib /usr/local/include /usr/local/share
-npm install -g npm
+echo "Test pip and npm"
+pip3 --version
+python3 --version
 npm --version
 
 echo "===================="
-echo "Install elm"
-npm install -g elm
+echo "Install elm modules"
+npm install -g elm elm-format elm-test create-elm-app
+
+echo "===================="
+echo "Test elm modules"
 elm --version
-
-echo "===================="
-echo "Install elm-format"
-npm install -g elm-format
 elm-format -h
-
-echo "===================="
-echo "Install elm-test"
-npm install -g elm-test
 elm-test --version
-
-echo "===================="
-echo "Install create-elm-app"
-npm install -g create-elm-app
 create-elm-app temp2
 cd temp2
 elm-app test
 cd ..
 
 echo "===================="
-echo "Install haskell stack"
-echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
-source ~/.bashrc
+echo "Install haskell"
 wget -qO - https://get.haskellstack.org/ | sh
 stack update
 stack upgrade
@@ -81,11 +96,12 @@ sed -i 's/#    author-name:/    author-name: Antoine Savage/g' ~/.stack/config.y
 sed -i 's/#    author-email:/    author-email: antoine.savage@gmail.com/g' ~/.stack/config.yaml
 sed -i 's/#    github-username:/    github-username: AntoineSavage/g' ~/.stack/config.yaml
 sed -i 's/#    copyright://g' ~/.stack/config.yaml
+
+echo "===================="
+echo "Test haskell"
 stack new temp3
 cd temp3
 stack test
-echo y | sudo apt-get install libtinfo-dev
-stack install aeson async doctest hspec parsec QuickCheck sensei servant stm wai wai-websockets warp websockets
 cd ..
 
 echo "===================="
@@ -94,7 +110,7 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)
 wget -qO - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 sudo apt update
 echo y | sudo apt upgrade
-echo y | sudo apt-get install postgresql zip unzip
+echo y | sudo apt-get install postgresql
 
 echo "===================="
 echo "Install postgres sample db"
