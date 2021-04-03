@@ -21,9 +21,19 @@
 # copy the ip after 'inet'
 # it's the same ip displayed by elm-app start
 
+if [ `whoami` = 'root' ];
+then
+        echo "This program must NOT be run as 'sudo'"
+        exit
+fi
+
 echo "===================="
 echo "Getting authorization"
 sudo echo ''
+
+# Refresh sudo credentials every minute
+while :; do sudo -v; sleep 59; done &
+refresh_sudo=$!
 
 echo "===================="
 echo "Configure SSH for github"
@@ -131,3 +141,4 @@ cd ..
 sudo apt autoremove
 rm -rf init-linux-tmp
 rm init-linux.sh
+kill "$refresh_sudo"
