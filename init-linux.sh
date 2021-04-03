@@ -41,6 +41,10 @@ chmod 600 ~/.ssh/id_ed25519
 chmod 600 ~/.ssh/id_ed25519.pub
 
 echo "===================="
+cat ~/.ssh/id_ed25519.pub
+echo "===================="
+
+echo "===================="
 echo "Configure ~/.bashrc"
 echo 'export PATH=$HOME/.local/bin:$PATH'                  >> ~/.bashrc
 echo ''                                                    >> ~/.bashrc
