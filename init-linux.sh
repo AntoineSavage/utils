@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # copy/paste the following line
-# wget -q https://raw.githubusercontent.com/AntoineSavage/utils/main/init-linux.sh && sh init-linux.sh
+# wget -q https://raw.githubusercontent.com/AntoineSavage/utils/main/init-linux.sh && bash init-linux.sh
 
 # Add SSH key to github account
 # https://github.com/settings/ssh/new
