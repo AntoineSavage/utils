@@ -21,26 +21,30 @@
 # copy the ip after 'inet'
 # it's the same ip displayed by elm-app start
 
+echo "===================="
+echo "Getting authorization"
 sudo echo ''
 
 echo "===================="
-echo "Configure ~/.bashrc"
-echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
-
-echo 'if ! pgrep -x "ssh-agent" > /dev/null' >> ~/.bashrc
-echo 'then eval `ssh-agent -s`' >> ~/.bashrc
-echo 'fi' >> ~/.bashrc
-
-source ~/.bashrc
-
-echo "===================="
 echo "Configure SSH for github"
-echo "Use default file location"
+echo "Use default file location!"
 echo "Use a strong password!"
 ssh-keygen -t ed25519 -C "antoine.savage@github.com"
 chmod 600 ~/.ssh/id_ed25519
 chmod 600 ~/.ssh/id_ed25519.pub
-ssh-add ~/.ssh/id_ed25519
+
+echo "===================="
+echo "Configure ~/.bashrc"
+echo 'export PATH=$HOME/.local/bin:$PATH'                  >> ~/.bashrc
+echo ''                                                    >> ~/.bashrc
+echo 'if [ ! -S ~/.ssh/ssh_auth_sock ]; then'              >> ~/.bashrc
+echo '  eval `ssh-agent`'                                  >> ~/.bashrc
+echo '  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock'      >> ~/.bashrc
+echo 'fi'                                                  >> ~/.bashrc
+echo 'export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock'           >> ~/.bashrc
+echo 'ssh-add -l > /dev/null || ssh-add ~/.ssh/id_ed25519' >> ~/.bashrc
+echo ''                                                    >> ~/.bashrc
+source ~/.bashrc
 
 echo "===================="
 echo "Configure npm folder ownership"
@@ -82,10 +86,12 @@ echo "Test elm modules"
 elm --version
 elm-format -h
 elm-test --version
-create-elm-app temp2
-cd temp2
+rm -rf temp
+create-elm-app temp
+cd temp
 elm-app test
 cd ..
+rm -rf temp
 
 echo "===================="
 echo "Install haskell"
@@ -99,10 +105,12 @@ sed -i 's/#    copyright://g' ~/.stack/config.yaml
 
 echo "===================="
 echo "Test haskell"
-stack new temp3
-cd temp3
+rm -rf temp
+stack new temp
+cd temp
 stack test
 cd ..
+rm -rf temp
 
 echo "===================="
 echo "Install postgres"
