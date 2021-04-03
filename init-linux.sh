@@ -78,8 +78,12 @@ sudo apt update
 echo y | sudo apt upgrade
 
 echo "===================="
+echo "Install dependency packages"
+sudo apt install -y zip unzip libtinfo-dev libffi-dev libgmp-dev g++ gcc make zlib1g-dev
+
+echo "===================="
 echo "Install pip and npm"
-sudo apt install -y python3-pip npm zip unzip libtinfo-dev libffi-dev libgmp-dev
+sudo apt install -y python3-pip npm
 npm install -g npm
 
 echo "===================="
