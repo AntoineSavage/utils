@@ -46,15 +46,10 @@ echo "===================="
 
 echo "===================="
 echo "Configure ~/.bashrc"
-echo 'export PATH=$HOME/.local/bin:$PATH'                  >> ~/.bashrc
-echo ''                                                    >> ~/.bashrc
-echo 'if [ ! -S ~/.ssh/ssh_auth_sock ]; then'              >> ~/.bashrc
-echo '  eval `ssh-agent`'                                  >> ~/.bashrc
-echo '  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock'      >> ~/.bashrc
-echo 'fi'                                                  >> ~/.bashrc
-echo 'export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock'           >> ~/.bashrc
-echo 'ssh-add -l > /dev/null || ssh-add ~/.ssh/id_ed25519' >> ~/.bashrc
-echo ''                                                    >> ~/.bashrc
+sudo apt install -y keychain
+
+echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
+echo 'eval $(keychain --eval id_ed25519)' >> ~/.bashrc
 source ~/.bashrc
 
 echo "===================="
