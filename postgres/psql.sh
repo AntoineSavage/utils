@@ -1,2 +1,2 @@
 #! /bin/bash
-sudo /bin/su -c 'psql' - postgres
+sudo su postgres -p -c 'psql'
