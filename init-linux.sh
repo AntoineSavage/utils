@@ -14,8 +14,6 @@
 #     "editor.formatOnSave": true
 # },
 
-# stack install aeson async doctest hspec parsec QuickCheck sensei servant stm wai wai-websockets warp websockets
-
 # If localhost is unreachable from windows
 # (from linux) ip addr | grep eth0
 # copy the ip after 'inet'
