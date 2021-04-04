@@ -32,7 +32,7 @@ echo "===================="
 echo "Configure SSH for github"
 echo "Use default file location!"
 echo "Use a strong password!"
-ssh-keygen -t ed25519 -C "antoine.savage@github.com"
+ssh-keygen -t ed25519 -C -N "antoine.savage@github.com"
 chmod 600 ~/.ssh/id_ed25519
 chmod 600 ~/.ssh/id_ed25519.pub
 
@@ -42,11 +42,8 @@ echo "===================="
 
 echo "===================="
 echo "Configure ~/.bashrc"
-sudo apt install -y keychain
-
 echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
 echo 'eval $(keychain --eval id_ed25519)' >> ~/.bashrc
-source ~/.bashrc
 
 echo "===================="
 echo "Configure npm folder ownership"
@@ -69,12 +66,8 @@ sudo apt update
 echo y | sudo apt upgrade
 
 echo "===================="
-echo "Install dependency packages"
-sudo apt install -y zip unzip libtinfo-dev g++ gcc libc6-dev libffi-dev libgmp-dev make xz-utils zlib1g-dev git gnupg netbase
-
-echo "===================="
-echo "Install pip and npm"
-sudo apt install -y python3-pip npm
+echo "Install packages (pip, npm, ...)
+sudo apt install -y python3-pip npm keychain zip unzip libtinfo-dev g++ gcc libc6-dev libffi-dev libgmp-dev make xz-utils zlib1g-dev git gnupg netbase
 npm install -g npm
 
 echo "===================="
