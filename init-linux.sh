@@ -32,7 +32,7 @@ echo "===================="
 echo "Configure SSH for github"
 echo "Use default file location!"
 echo "Use a strong password!"
-ssh-keygen -t ed25519 -C -N "antoine.savage@github.com"
+ssh-keygen -t ed25519 -C "antoine.savage@github.com"
 chmod 600 ~/.ssh/id_ed25519
 chmod 600 ~/.ssh/id_ed25519.pub
 
