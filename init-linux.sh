@@ -3,9 +3,7 @@
 # copy/paste the following line
 # wget -q https://raw.githubusercontent.com/AntoineSavage/utils/main/init-linux.sh && bash init-linux.sh && source ~/.bashrc
 
-# Add SSH key to github account
-# https://github.com/settings/ssh/new
-# cat ~/.ssh/id_ed25519.pub
+# Add SSH key to github account: https://github.com/settings/ssh/new
 
 # Elm format-on-save in vscode:
 # Ctrl+Shift+P, open settings (JSON)
