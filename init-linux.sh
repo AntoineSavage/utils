@@ -66,7 +66,7 @@ sudo apt update
 echo y | sudo apt upgrade
 
 echo "===================="
-echo "Install packages (pip, npm, ...)
+echo "Install packages (pip, npm, ...)"
 sudo apt install -y python3-pip npm keychain zip unzip libtinfo-dev g++ gcc libc6-dev libffi-dev libgmp-dev make xz-utils zlib1g-dev git gnupg netbase
 npm install -g npm
 
