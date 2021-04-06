@@ -125,7 +125,7 @@ echo y | sudo apt-get install postgresql
 
 echo "===================="
 echo "Init postgres DB"
-sudo su -c "rm init-postgres* && wget -q https://raw.githubusercontent.com/AntoineSavage/utils/main/init-postgres.sh && sh init-postgres.sh" - postgres
+sudo su -c "wget -O init-postgres.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-postgres.sh && sh init-postgres.sh" - postgres
 
 echo "===================="
 echo "Clean-up"
