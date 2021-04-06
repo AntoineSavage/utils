@@ -26,3 +26,6 @@ wget -qO init-haskell.sh https://raw.githubusercontent.com/AntoineSavage/utils/m
 
 # init-exercism
 wget -qO init-exercism.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-exercism.sh && bash init-exercism.sh
+
+Then get token from: https://exercism.io/my/settings
+exercism configure --token=THE_TOKEN
