@@ -1,8 +1,5 @@
 #! /bin/bash
 
-# copy/paste the following line
-# wget -O init-haskell.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-haskell.sh && bash init-haskell.sh
-
 rm -rf temp
 stack new temp
 cd temp
