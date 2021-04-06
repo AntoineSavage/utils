@@ -124,7 +124,7 @@ echo y | sudo apt upgrade
 echo y | sudo apt-get install postgresql
 
 echo "===================="
-echo "Install postgres sample db"
+echo "Init postgres DB"
 sudo su -c "wget -q https://raw.githubusercontent.com/AntoineSavage/utils/main/init-postgres.sh && sh init-postgres.sh" - postgres
 
 echo "===================="
