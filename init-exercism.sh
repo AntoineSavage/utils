@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # copy/paste the following line
-# wget -O init-linux.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-exercism.sh && bash init-exercism.sh
+# wget -qO init-exercism.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-exercism.sh && bash init-exercism.sh
 
 # Then get token from: https://exercism.io/my/settings
 # exercism configure --token=THE_TOKEN
