@@ -125,6 +125,7 @@ echo y | sudo apt-get install postgresql
 
 echo "===================="
 echo "Init postgres DB"
+sudo service postgresql start
 sudo su -c "wget -qO init-postgres.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-postgres.sh && sh init-postgres.sh" - postgres
 
 echo "===================="
