@@ -10,3 +10,5 @@ rm dvdrental.zip
 
 pg_restore --dbname=dvdrental --verbose dvdrental.tar
 rm dvdrental.tar
+
+rm init-postgres.sh
