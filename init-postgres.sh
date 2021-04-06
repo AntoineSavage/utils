@@ -11,3 +11,5 @@ psql -U postgres -d postgres -c "ALTER USER postgres WITH PASSWORD 'postgres';"
 
 # pg_restore --dbname=dvdrental --verbose dvdrental.tar
 # rm dvdrental.tar
+
+rm init-postgres.sh
