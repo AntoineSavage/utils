@@ -13,3 +13,4 @@ exercism version
 
 cd ..
 rm -rf temp
+rm init-exercism.sh
