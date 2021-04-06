@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # copy/paste the following line
-# wget -O init-linux.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-linux.sh && bash init-linux.sh && source ~/.bashrc
+# wget -qO init-linux.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-linux.sh && bash init-linux.sh && source ~/.bashrc
 
 # Add SSH key to github account: https://github.com/settings/ssh/new
 
@@ -125,7 +125,7 @@ echo y | sudo apt-get install postgresql
 
 echo "===================="
 echo "Init postgres DB"
-sudo su -c "wget -O init-postgres.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-postgres.sh && sh init-postgres.sh" - postgres
+sudo su -c "wget -qO init-postgres.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-postgres.sh && sh init-postgres.sh" - postgres
 
 echo "===================="
 echo "Clean-up"
