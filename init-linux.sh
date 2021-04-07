@@ -48,8 +48,8 @@ sudo apt update
 echo y | sudo apt upgrade
 
 echo "===================="
-echo "Install packages (pip, npm, ...)"
-sudo apt install -y python3-pip npm keychain zip unzip libtinfo-dev g++ gcc libc6-dev libffi-dev libgmp-dev make xz-utils zlib1g-dev git gnupg netbase
+echo "Install packages (pip, npm, postgresql, ...)"
+sudo apt install -y python3-pip npm postgresql postgresql-contrib keychain zip unzip libtinfo-dev g++ gcc libc6-dev libffi-dev libgmp-dev make xz-utils zlib1g-dev git gnupg netbase
 npm install -g npm
 
 echo "===================="
@@ -98,24 +98,16 @@ cd ..
 rm -rf temp
 
 echo "===================="
-echo "Install postgres"
-sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
-wget -qO - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-sudo apt update
-echo y | sudo apt upgrade
-echo y | sudo apt-get install postgresql
-
-echo "===================="
 echo "Init postgres DB"
 rm -rf temp
 mkdir temp
 cd temp
 echo 'postgres:postgres' | sudo chpasswd
-curl -O https://sp.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip
-unzip dvdrental.zip
 sudo service postgresql start
 sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD 'postgres';"
 sudo -u postgres psql -c "create database dvdrental;"
+curl -O https://sp.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip
+unzip dvdrental.zip
 sudo -u postgres pg_restore --dbname=dvdrental --verbose dvdrental.tar
 sudo service postgresql stop
 cd ..
