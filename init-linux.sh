@@ -45,7 +45,7 @@ cd init-linux-tmp
 echo "===================="
 echo "Upgrade apt"
 sudo apt update
-echo y | sudo apt upgrade
+sudo apt upgrade -y
 
 echo "===================="
 echo "Install packages (pip, npm, postgresql, ...)"
