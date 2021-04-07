@@ -110,15 +110,14 @@ echo "Init postgres DB"
 rm -rf temp
 mkdir temp
 cd temp
-
 echo 'postgres:postgres' | sudo chpasswd
+curl -O https://sp.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip
+unzip dvdrental.zip
 sudo service postgresql start
 sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD 'postgres';"
 sudo -u postgres psql -c "create database dvdrental;"
-curl -O https://sp.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip
-unzip dvdrental.zip
 sudo -u postgres pg_restore --dbname=dvdrental --verbose dvdrental.tar
-
+sudo service postgresql stop
 cd ..
 rm -rf temp
 
