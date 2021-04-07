@@ -5,6 +5,12 @@ wget -qO init-linux.sh https://raw.githubusercontent.com/AntoineSavage/utils/mai
 
 Add SSH key to github account: https://github.com/settings/ssh/new
 
+## If pgAdmin cannot connect to postgresql
+Run the following in powershell:
+```powershell
+wsl --shutdown
+```
+
 ## Elm format-on-save in vscode
 Ctrl+Shift+P, open settings (JSON), then add the following key:
 ```json
