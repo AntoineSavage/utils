@@ -111,11 +111,11 @@ echo 'postgres:postgres' | sudo chpasswd
 sudo service postgresql start
 sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD 'postgres';"
 sudo -u postgres psql -c "create database dvdrental;"
-sudo -u postgres psql -c "curl -O https://sp.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip"
-sudo -u postgres psql -c "unzip dvdrental.zip"
-sudo -u postgres psql -c "pg_restore --dbname=dvdrental --verbose dvdrental.tar"
-sudo -u postgres psql -c "rm dvdrental.zip"
-sudo -u postgres psql -c "rm dvdrental.tar"
+sudo -u postgres curl -O https://sp.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip
+sudo -u postgres unzip dvdrental.zip
+sudo -u postgres pg_restore --dbname=dvdrental --verbose dvdrental.tar
+sudo -u postgres rm dvdrental.zip
+sudo -u postgres rm dvdrental.tar
 
 echo "===================="
 echo "Clean-up"
