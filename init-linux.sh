@@ -107,15 +107,20 @@ echo y | sudo apt-get install postgresql
 
 echo "===================="
 echo "Init postgres DB"
+rm -rf temp
+mkdir temp
+cd temp
+
 echo 'postgres:postgres' | sudo chpasswd
 sudo service postgresql start
 sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD 'postgres';"
 sudo -u postgres psql -c "create database dvdrental;"
-sudo -u postgres curl -O https://sp.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip
-sudo -u postgres unzip dvdrental.zip
+curl -O https://sp.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip
+unzip dvdrental.zip
 sudo -u postgres pg_restore --dbname=dvdrental --verbose dvdrental.tar
-sudo -u postgres rm dvdrental.zip
-sudo -u postgres rm dvdrental.tar
+
+cd ..
+rm -rf temp
 
 echo "===================="
 echo "Clean-up"
