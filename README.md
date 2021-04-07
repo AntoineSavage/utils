@@ -5,21 +5,20 @@ wget -qO init-linux.sh https://raw.githubusercontent.com/AntoineSavage/utils/mai
 
 Add SSH key to github account: https://github.com/settings/ssh/new
 
-Elm format-on-save in vscode:
-Ctrl+Shift+P, open settings (JSON)
-Add the following key:
+## Elm format-on-save in vscode
+Ctrl+Shift+P, open settings (JSON), then add the following key:
 ```json
 "[elm]": {
     "editor.formatOnSave": true
 },
 ```
 
-If localhost is unreachable from windows, type (in linux):
+## If linux localhost is unreachable from windows
+Run the following in linux:
 ```bash
 ip addr | grep eth0
 ```
-copy the ip after 'inet'
-it's the same ip displayed by elm-app start
+then copy the ip after 'inet', it's the same ip displayed by elm-app start
 
 # init-haskell
 ```bash
