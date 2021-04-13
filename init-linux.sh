@@ -48,8 +48,8 @@ sudo apt update
 sudo apt upgrade -y
 
 echo "===================="
-echo "Install packages (pip, npm, postgresql, ...)"
-sudo apt install -y python3-pip npm postgresql postgresql-contrib keychain zip unzip libtinfo-dev g++ gcc libc6-dev libffi-dev libgmp-dev make xz-utils zlib1g-dev git gnupg netbase
+echo "Install packages (pip, npm, elixir, postgresql, ...)"
+sudo apt install -y python3-pip npm elixir postgresql postgresql-contrib keychain zip unzip libtinfo-dev g++ gcc libc6-dev libffi-dev libgmp-dev make xz-utils zlib1g-dev git gnupg netbase
 npm install -g npm
 
 echo "===================="
