@@ -53,10 +53,12 @@ sudo apt install -y python3-pip npm elixir postgresql postgresql-contrib keychai
 npm install -g npm
 
 echo "===================="
-echo "Test pip and npm"
+echo "Test packages"
 pip3 --version
 python3 --version
 npm --version
+elixir --version
+mix --version
 
 echo "===================="
 echo "Install elm modules"
