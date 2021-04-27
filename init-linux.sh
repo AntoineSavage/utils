@@ -28,10 +28,6 @@ echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
 echo 'eval $(keychain --eval id_ed25519)' >> ~/.bashrc
 
 echo "===================="
-echo "Configure npm folder ownership"
-sudo chown -R $(whoami) /usr/local/bin /usr/local/lib /usr/local/include /usr/local/share
-
-echo "===================="
 echo "Configure git"
 git config --global user.name "Antoine Savage"
 git config --global user.email "antoine.savage@gmail.com"
