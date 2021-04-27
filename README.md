@@ -5,7 +5,7 @@ wget -qO init-linux.sh https://raw.githubusercontent.com/AntoineSavage/utils/mai
 
 Add SSH key to github account: https://github.com/settings/ssh/new
 
-# Specific initialisations
+# Specific
 
 Choose any among the following
 
