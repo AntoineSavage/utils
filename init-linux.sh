@@ -89,7 +89,6 @@ rm -rf temp
 echo "===================="
 echo "Init docker"
 sudo usermod -aG docker asavage
-newgrp docker
 
 echo "===================="
 echo "Clean-up"
@@ -98,3 +97,6 @@ sudo apt autoremove
 rm -rf init-linux-tmp
 rm init-linux.sh
 kill "$refresh_sudo"
+
+echo "===================="
+echo "Completed. Please log out and log back in for docker group changes to take effect"
