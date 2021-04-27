@@ -14,6 +14,11 @@ Choose any among the following
 wget -qO init-elm.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-elm.sh && bash init-elm.sh
 ```
 
+## postgresql
+```bash
+wget -qO init-postgres.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-postgres.sh && bash init-postgres.sh
+```
+
 ## python
 ```bash
 wget -qO init-python.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-python.sh && bash init-python.sh
