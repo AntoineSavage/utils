@@ -87,11 +87,6 @@ cd ..
 rm -rf temp
 
 echo "===================="
-echo "Init docker service"
-sudo systemctl start docker
-sudo systemctl enable docker
-
-echo "===================="
 echo "Clean-up"
 cd ..
 sudo apt autoremove
