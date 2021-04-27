@@ -18,7 +18,6 @@ sudo apt upgrade -y
 echo "===================="
 echo "Install elixir"
 sudo apt install -y elixir
-npm install -g npm
 
 echo "===================="
 echo "Clean-up"
