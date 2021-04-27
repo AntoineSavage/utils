@@ -9,9 +9,24 @@ Add SSH key to github account: https://github.com/settings/ssh/new
 
 Choose any among the following
 
+## docker
+```bash
+wget -qO init-docker.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-docker.sh && bash init-docker.sh
+```
+
 ## elm
 ```bash
 wget -qO init-elm.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-elm.sh && bash init-elm.sh
+```
+
+## exercism
+```bash
+wget -qO init-exercism.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-exercism.sh && bash init-exercism.sh
+```
+
+## haskell
+```bash
+wget -qO init-haskell.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-haskell.sh && bash init-haskell.sh
 ```
 
 ## postgresql
@@ -22,16 +37,6 @@ wget -qO init-postgres.sh https://raw.githubusercontent.com/AntoineSavage/utils/
 ## python
 ```bash
 wget -qO init-python.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-python.sh && bash init-python.sh
-```
-
-## haskell
-```bash
-wget -qO init-haskell.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-haskell.sh && bash init-haskell.sh
-```
-
-## exercism
-```bash
-wget -qO init-exercism.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-exercism.sh && bash init-exercism.sh
 ```
 
 Then get token from: https://exercism.io/my/settings
