@@ -12,9 +12,9 @@ refresh_sudo=$!
 
 echo "===================="
 echo "Create temp directory"
-rm -rf init-linux-tmp
-mkdir init-linux-tmp
-cd init-linux-tmp
+rm -rf init-python-tmp
+mkdir init-python-tmp
+cd init-python-tmp
 
 echo "===================="
 echo "Upgrade apt"
@@ -29,6 +29,6 @@ echo "===================="
 echo "Clean-up"
 cd ..
 sudo apt autoremove
-rm -rf init-linux-tmp
+rm -rf init-python-tmp
 rm init-python.sh
 kill "$refresh_sudo"
