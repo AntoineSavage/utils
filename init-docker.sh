@@ -18,7 +18,6 @@ sudo apt upgrade -y
 echo "===================="
 echo "Install docker"
 sudo apt install -y docker.io
-npm install -g npm
 
 echo "===================="
 echo "Init docker"
