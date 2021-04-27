@@ -5,14 +5,17 @@ wget -qO init-linux.sh https://raw.githubusercontent.com/AntoineSavage/utils/mai
 
 Add SSH key to github account: https://github.com/settings/ssh/new
 
-# init specific things
+# init elm
+```bash
+wget -qO init-elm.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-elm.sh && bash init-elm.sh
+```
 
-## init-haskell
+# init-haskell
 ```bash
 wget -qO init-haskell.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-haskell.sh && bash init-haskell.sh
 ```
 
-## init-exercism
+# init-exercism
 ```bash
 wget -qO init-exercism.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-exercism.sh && bash init-exercism.sh
 ```
