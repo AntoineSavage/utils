@@ -40,5 +40,5 @@ echo "Clean-up"
 cd ..
 sudo apt autoremove
 rm -rf init-linux-tmp
-rm init-linux.sh
+rm init-elm.sh
 kill "$refresh_sudo"
