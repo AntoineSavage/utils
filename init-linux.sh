@@ -48,8 +48,8 @@ sudo apt update
 sudo apt upgrade -y
 
 echo "===================="
-echo "Install packages (pip, npm, elixir, postgresql, openjdk, ...)"
-sudo apt install -y python3-pip npm elixir postgresql postgresql-contrib openjdk-13-jdk maven keychain zip unzip libtinfo-dev g++ gcc libc6-dev libffi-dev libgmp-dev make xz-utils zlib1g-dev git gnupg netbase
+echo "Install packages (pip, npm, elixir, postgresql, openjdk, docker, ...)"
+sudo apt install -y python3-pip npm elixir postgresql postgresql-contrib openjdk-13-jdk docker.io maven keychain zip unzip libtinfo-dev g++ gcc libc6-dev libffi-dev libgmp-dev make xz-utils zlib1g-dev git gnupg netbase
 npm install -g npm
 
 echo "===================="
