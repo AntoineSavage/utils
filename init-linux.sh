@@ -88,7 +88,6 @@ rm -rf temp
 
 echo "===================="
 echo "Init docker"
-sudo groupadd docker
 sudo usermod -aG docker asavage
 newgrp docker
 
