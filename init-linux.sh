@@ -48,34 +48,14 @@ sudo apt update
 sudo apt upgrade -y
 
 echo "===================="
-echo "Install packages (pip, npm, elixir, postgresql, ...)"
-sudo apt install -y python3-pip npm elixir postgresql postgresql-contrib keychain zip unzip libtinfo-dev g++ gcc libc6-dev libffi-dev libgmp-dev make xz-utils zlib1g-dev git gnupg netbase
+echo "Install packages (pip, npm, elixir, postgresql, openjdk, ...)"
+sudo apt install -y python3-pip npm elixir postgresql postgresql-contrib openjdk-13-jdk maven keychain zip unzip libtinfo-dev g++ gcc libc6-dev libffi-dev libgmp-dev make xz-utils zlib1g-dev git gnupg netbase
 npm install -g npm
-
-echo "===================="
-echo "Test packages"
-pip3 --version
-python3 --version
-npm --version
-elixir --version
-mix --version
 
 echo "===================="
 echo "Install elm modules"
 npm install -g elm elm-format elm-test
 npm install -g create-elm-app # must be installed separately
-
-echo "===================="
-echo "Test elm modules"
-elm --version
-elm-format -h
-elm-test --version
-rm -rf temp
-create-elm-app temp
-cd temp
-elm-app test
-cd ..
-rm -rf temp
 
 echo "===================="
 echo "Install haskell"
@@ -89,15 +69,6 @@ sed -i 's/#    author-name:/    author-name: Antoine Savage/g' ~/.stack/config.y
 sed -i 's/#    author-email:/    author-email: antoine.savage@gmail.com/g' ~/.stack/config.yaml
 sed -i 's/#    github-username:/    github-username: AntoineSavage/g' ~/.stack/config.yaml
 sed -i 's/#    copyright://g' ~/.stack/config.yaml
-
-echo "===================="
-echo "Test haskell"
-rm -rf temp
-stack new temp
-cd temp
-stack test
-cd ..
-rm -rf temp
 
 echo "===================="
 echo "Init postgres DB"
