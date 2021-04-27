@@ -16,9 +16,9 @@ sudo chown -R $(whoami) /usr/local/bin /usr/local/lib /usr/local/include /usr/lo
 
 echo "===================="
 echo "Create temp directory"
-rm -rf init-linux-tmp
-mkdir init-linux-tmp
-cd init-linux-tmp
+rm -rf init-elm-tmp
+mkdir init-elm-tmp
+cd init-elm-tmp
 
 echo "===================="
 echo "Upgrade apt"
@@ -39,6 +39,6 @@ echo "===================="
 echo "Clean-up"
 cd ..
 sudo apt autoremove
-rm -rf init-linux-tmp
+rm -rf init-elm-tmp
 rm init-elm.sh
 kill "$refresh_sudo"
