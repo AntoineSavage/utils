@@ -1,9 +1,6 @@
 # init-git
 ```bash
-wget -qO init-git.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-git.sh
-bash init-git.sh
-source ~/.bashrc
-rm init-git.sh
+wget -qO init-git.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-git.sh && bash init-git.sh && source ~/.bashrc && rm init-git.sh
 ```
 
 # init-linux
