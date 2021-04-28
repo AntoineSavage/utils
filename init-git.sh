@@ -1,9 +1,9 @@
 #!/bin/bash
 
-if [ `whoami` = 'root' ]; then echo "This program must NOT be run as 'sudo'"; exit; fi
+if [ `whoami` = 'root' ]; then echo "This program must NOT be run using 'sudo'"; exit; fi
 
 sudo apt update
-sudo apt install keychain
+sudo apt install -y keychain
 
 git config --global user.name "Antoine Savage"
 git config --global user.email "antoine.savage@gmail.com"

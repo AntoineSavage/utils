@@ -1,44 +1,11 @@
 #!/bin/bash
 
-if [ `whoami` = 'root' ]; then echo "This program must NOT be run as 'sudo'"; exit; fi
+if [ `whoami` != 'root' ]; then echo "This program must be run using 'sudo'"; exit; fi
 
-echo "===================="
-echo "Getting authorization"
-sudo echo ''
+chown -R asavage /usr/local/bin /usr/local/lib /usr/local/include /usr/local/share
 
-# Refresh sudo credentials every minute
-while :; do sudo -v; sleep 59; done &
-refresh_sudo=$!
-
-echo "===================="
-echo "Configure npm folder ownership"
-sudo chown -R $(whoami) /usr/local/bin /usr/local/lib /usr/local/include /usr/local/share
-
-echo "===================="
-echo "Create temp directory"
-rm -rf init-elm-tmp
-mkdir init-elm-tmp
-cd init-elm-tmp
-
-echo "===================="
-echo "Upgrade apt"
-sudo apt update
-sudo apt upgrade -y
-
-echo "===================="
-echo "Install npm"
-sudo apt install -y npm
-npm install -g npm
-
-echo "===================="
-echo "Install elm modules"
-npm install -g elm elm-format elm-test
-npm install -g create-elm-app # must be installed separately
-
-echo "===================="
-echo "Clean-up"
-cd ..
-sudo apt autoremove
-rm -rf init-elm-tmp
-rm init-elm.sh
-kill "$refresh_sudo"
+apt update
+apt install -y npm
+sudo -u asavage npm install -g npm
+sudo -u asavage npm install -g elm elm-format elm-test
+sudo -u asavage npm install -g create-elm-app # must be installed separately
