@@ -14,6 +14,11 @@ Choose any among the following
 wget -qO init-docker.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-docker.sh && bash init-docker.sh
 ```
 
+## elixir
+```bash
+wget -qO init-elixir.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-elixir.sh && bash init-elixir.sh
+```
+
 ## elm
 ```bash
 wget -qO init-elm.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-elm.sh && bash init-elm.sh
@@ -24,9 +29,19 @@ wget -qO init-elm.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/
 wget -qO init-exercism.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-exercism.sh && bash init-exercism.sh
 ```
 
+Then get token from: https://exercism.io/my/settings
+```bash
+exercism configure --token=${THE_TOKEN}
+```
+
 ## haskell
 ```bash
 wget -qO init-haskell.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-haskell.sh && bash init-haskell.sh
+```
+
+## java
+```bash
+wget -qO init-java.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-java.sh && bash init-java.sh
 ```
 
 ## postgresql
@@ -37,11 +52,6 @@ wget -qO init-postgres.sh https://raw.githubusercontent.com/AntoineSavage/utils/
 ## python
 ```bash
 wget -qO init-python.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-python.sh && bash init-python.sh
-```
-
-Then get token from: https://exercism.io/my/settings
-```bash
-exercism configure --token=${THE_TOKEN}
 ```
 
 # Troubleshooting
