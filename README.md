@@ -1,14 +1,16 @@
-# init-git
+# Steps
+
+## Configure SSH for git
 ```bash
 wget -qO init-git.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-git.sh && bash init-git.sh && source ~/.bashrc && rm init-git.sh
 ```
+
+Add SSH key to github account: https://github.com/settings/ssh/new
 
 # init-linux
 ```bash
 wget -qO init-linux.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-linux.sh && bash init-linux.sh && source ~/.bashrc
 ```
-
-Add SSH key to github account: https://github.com/settings/ssh/new
 
 # Specific
 
