@@ -20,8 +20,8 @@ echo yes | git clone git@github.com:AntoineSavage/utils.git && sudo utils/init-p
 | ------------- |---------------
 | docker        | `sudo utils/init-docker.sh`
 | elixir        | `sudo utils/init-elixir.sh`
-| elm           | `sudo utils/init-elm.sh`
-| haskell       | `sudo utils/init-haskell.sh`
+| elm           | `utils/init-elm.sh`
+| haskell       | `utils/init-haskell.sh`
 | java          | `sudo utils/init-java.sh`
 | postgres      | `sudo utils/init-postgres.sh`
 | python        | `sudo utils/init-python.sh`
