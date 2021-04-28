@@ -1,39 +1,37 @@
 # Steps
 
-## Configure SSH for git
+## 1) Configure SSH for git
 ```bash
 wget -qO init-git.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-git.sh && bash init-git.sh && source ~/.bashrc && rm init-git.sh
 ```
 
 Add SSH key to github account: https://github.com/settings/ssh/new
 
-# init-linux
-```bash
-wget -qO init-linux.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-linux.sh && bash init-linux.sh && source ~/.bashrc
+## 2) Update and install dependency packages
+```
+echo yes | git clone git@github.com:AntoineSavage/utils.git && bash utils/init-packages.sh
 ```
 
-# Specific
+## 3) Install specific components:
 
-Choose any among the following
-
-## docker
+### docker
 ```bash
-wget -qO init-docker.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-docker.sh && bash init-docker.sh
+bash utils/init-docker.sh
 ```
 
-## elixir
+### elixir
 ```bash
-wget -qO init-elixir.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-elixir.sh && bash init-elixir.sh
+bash utils/init-elixir.sh
 ```
 
-## elm
+### elm
 ```bash
-wget -qO init-elm.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-elm.sh && bash init-elm.sh
+bash utils/init-elm.sh
 ```
 
-## exercism
+### exercism
 ```bash
-wget -qO init-exercism.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-exercism.sh && bash init-exercism.sh
+bash utils/init-exercism.sh
 ```
 
 Then get token from: https://exercism.io/my/settings
@@ -41,24 +39,24 @@ Then get token from: https://exercism.io/my/settings
 exercism configure --token=${THE_TOKEN}
 ```
 
-## haskell
+### haskell
 ```bash
-wget -qO init-haskell.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-haskell.sh && bash init-haskell.sh
+bash utils/bash init-haskell.sh
 ```
 
-## java
+### java
 ```bash
-wget -qO init-java.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-java.sh && bash init-java.sh
+bash utils/init-java.sh
 ```
 
-## postgresql
+### postgresql
 ```bash
-wget -qO init-postgres.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-postgres.sh && bash init-postgres.sh
+bash utils/init-postgres.sh
 ```
 
-## python
+### python
 ```bash
-wget -qO init-python.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-python.sh && bash init-python.sh
+bash utils/init-python.sh
 ```
 
 # Troubleshooting
