@@ -1,4 +1,6 @@
-# Steps
+# Installation steps
+
+From a clean ubuntu WSL install. Username assumed to be 'asavage'
 
 ## 1) Configure SSH for git
 ```bash
