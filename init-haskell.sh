@@ -13,8 +13,8 @@ wget https://get.haskellstack.org/stable/linux-x86_64.tar.gz
 gzip -d linux-x86_64.tar.gz
 tar -xvf linux-x86_64.tar
 install -c -o 0 -g 0 -m 0755 stack*linux*/stack /usr/local/bin
-stack update
-stack upgrade
+sudo -u asavage stack update
+sudo -u asavage stack upgrade
 sed -i 's/#    author-name:/    author-name: Antoine Savage/g' ~/.stack/config.yaml
 sed -i 's/#    author-email:/    author-email: antoine.savage@gmail.com/g' ~/.stack/config.yaml
 sed -i 's/#    github-username:/    github-username: AntoineSavage/g' ~/.stack/config.yaml
@@ -24,8 +24,8 @@ cd ..
 rm -rf temp
 stack new temp
 cd temp
-stack install aeson async containers doctest hspec parsec postgresql-typed QuickCheck sensei servant stm text time utf8-string wai wai-cors wai-websockets warp websockets
-stack build
+sudo -u asavage stack install aeson async containers doctest hspec parsec postgresql-typed QuickCheck sensei servant stm text time utf8-string wai wai-cors wai-websockets warp websockets
+sudo -u asavage stack build
 
 cd ..
 rm -rf temp
