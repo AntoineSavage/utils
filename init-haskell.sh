@@ -3,6 +3,7 @@
 if [ `whoami` != 'root' ]; then echo "This program must be run using 'sudo'"; exit; fi
 
 echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
+source ~/.bashrc
 
 rm -rf temp
 mkdir temp
