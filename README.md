@@ -11,7 +11,7 @@ Add SSH key to github account: https://github.com/settings/ssh/new
 
 ## 2) Checkout this repository
 ```
-echo yes | git clone git@github.com:AntoineSavage/utils.git && utils/init-packages.sh
+echo yes | git clone git@github.com:AntoineSavage/utils.git
 ```
 
 ## 3) Install dependency packages
