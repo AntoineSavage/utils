@@ -1,8 +1,8 @@
 #!/bin/bash
 
 if [ `whoami` = 'root' ]; then echo "This program must NOT be run using 'sudo'"; exit; fi
+sudo -v
 
-sudo echo ''
 echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
 
