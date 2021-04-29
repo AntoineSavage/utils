@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ `whoami` != 'root' ]; then echo "This program must be run using 'sudo'"; exit; fi
+if [ `whoami` = 'root' ]; then echo "This program must NOT be run using 'sudo'"; exit; fi
 
-apt update
-apt install -y elixir
+sudo apt update
+sudo apt install -y elixir
