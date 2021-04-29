@@ -11,8 +11,10 @@ Add SSH key to github account: https://github.com/settings/ssh/new
 
 ## 2) Checkout this repository
 ```
-echo yes | git clone git@github.com:AntoineSavage/utils.git
+git clone git@github.com:AntoineSavage/utils.git
 ```
+
+Enter `yes` when prompted with `The authenticity of host 'github.com (...)' can't be established`
 
 ## 3) Install dependency packages
 ```
