@@ -30,6 +30,7 @@ utils/init-haskell.sh
 utils/init-java.sh
 utils/init-postgres.sh
 utils/init-python.sh
+utils/init-gcloud.sh
 ```
 
 # Additional setup (optional)
