@@ -38,6 +38,12 @@ When main install is finished, log out then log back in:
 sudo dockerd
 ```
 
+## Local env
+
+### Postgres + dvdrental
+
+https://github.com/Dexels/postgres-debezium-dvdrental
+
 ## Troubleshooting
 
 ### If linux localhost is unreachable from windows
