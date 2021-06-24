@@ -1,74 +1,69 @@
-# WSL Ubuntu Setup
+# WSL Ubuntu Setup command
 
-Username assumed to be 'asavage'
+## 1) Main install
 
-## 1) Configure SSH for git
+This will take about 20 mins:
+
 ```bash
-wget -qO init-git.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-git.sh && bash init-git.sh && rm init-git.sh && source ~/.bashrc
+wget -qO init-git.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init.sh && bash init.sh && rm init.sh
 ```
 
-Add SSH key to github account: https://github.com/settings/ssh/new
+In the meantime...
 
-## 2) Checkout this repository
-```
-git clone git@github.com:AntoineSavage/utils.git
-```
+## 2) Add SSH key to github account
 
-Enter `yes` when prompted with `The authenticity of host 'github.com (...)' can't be established`
+Copy the output of the following command (in another terminal):
 
-## 3) Install dependency packages
-```
-utils/init-packages.sh
+```bash
+cat ~/.ssh/id_ed25519.pub
 ```
 
-## 3) Install specific components (all optional):
-```
-utils/init-docker.sh
-utils/init-elixir.sh
-utils/init-elm.sh
-utils/init-gcloud.sh
-utils/init-haskell.sh
-utils/init-java.sh
-utils/init-postgres.sh
-utils/init-python.sh
-```
+Into here: <https://github.com/settings/ssh/new>
 
-# Additional setup (optional)
+## 3) Setup Exercism credentials
 
-## Start docker daemon
-```
-sudo dockerd"
-```
+Then get token from: <https://exercism.io/my/settings>
 
-## Exercism
-```
-utils/init-exercism.sh
-```
+Into here:
 
-Then get token from: https://exercism.io/my/settings
 ```bash
 exercism configure --token=${THE_TOKEN}
 ```
 
-## Elm format-on-save in vscode
+## 4) Start docker daemon
+
+When main install finished, log out then log back in:
+
+```bash
+sudo dockerd
+```
+
+## VSCode: Elm format-on-save
+
 Ctrl+Shift+P, open settings (JSON), then add the following key:
+
 ```json
 "[elm]": {
     "editor.formatOnSave": true
 },
 ```
 
-# Troubleshooting
+## Troubleshooting
 
-## If linux localhost is unreachable from windows
+### If linux localhost is unreachable from windows
+
 Run the following in linux:
+
 ```bash
 ip addr | grep eth0
 ```
+
 then copy the ip after 'inet', it's the same ip displayed by elm-app start
 
-## If pgAdmin cannot connect to postgresql
+### If pgAdmin cannot connect to postgresql
+
 Run the following in powershell:
+
 ```powershell
 wsl --shutdown
 ```
