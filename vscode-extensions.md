@@ -1,5 +1,15 @@
 # VSCode Extentions
 
+## Elm format-on-save
+
+Ctrl+Shift+P, open settings (JSON), then add the following key:
+
+```json
+"[elm]": {
+    "editor.formatOnSave": true
+},
+```
+
 ## Export
 
 In linux:
