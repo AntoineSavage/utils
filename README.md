@@ -1,4 +1,4 @@
-# WSL Ubuntu Setup command
+# WSL Ubuntu Setup
 
 ## 1) Main install
 
