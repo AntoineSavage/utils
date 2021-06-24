@@ -32,7 +32,7 @@ exercism configure --token=${THE_TOKEN}
 
 ## 4) Start docker daemon
 
-When main install finished, log out then log back in:
+When main install is finished, log out then log back in:
 
 ```bash
 sudo dockerd
