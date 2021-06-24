@@ -24,7 +24,7 @@ Into here: <https://github.com/settings/ssh/new>
 
 Then get token from: <https://exercism.io/my/settings>
 
-Into here:
+Into here (new terminal):
 
 ```bash
 exercism configure --token=${THE_TOKEN}
