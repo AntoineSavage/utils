@@ -39,7 +39,7 @@ curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyr
 
 # Install packages
 sudo apt update
-sudo apt install -y docker.io google-cloud-sdk google-cloud-sdk-app-engine-python keychain npm python3-venv python3-pip
+sudo apt install -y docker.io docker-compose google-cloud-sdk google-cloud-sdk-app-engine-python keychain npm python3-venv python3-pip
 
 # Init docker
 sudo usermod -aG docker $(whoami)
