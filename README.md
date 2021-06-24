@@ -5,7 +5,7 @@
 This will take about 20 mins:
 
 ```bash
-wget -qO init-git.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init.sh && bash init.sh && rm init.sh
+wget -qO init.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init.sh && bash init.sh && rm init.sh
 ```
 
 In the meantime...
