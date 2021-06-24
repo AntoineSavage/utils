@@ -38,16 +38,6 @@ When main install is finished, log out then log back in:
 sudo dockerd
 ```
 
-## VSCode: Elm format-on-save
-
-Ctrl+Shift+P, open settings (JSON), then add the following key:
-
-```json
-"[elm]": {
-    "editor.formatOnSave": true
-},
-```
-
 ## Troubleshooting
 
 ### If linux localhost is unreachable from windows
