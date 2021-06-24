@@ -35,6 +35,11 @@ utils/init-python.sh
 
 # Additional setup (optional)
 
+## Start docker daemon
+```
+sudo dockerd"
+```
+
 ## Exercism
 ```
 utils/init-exercism.sh
