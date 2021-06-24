@@ -19,7 +19,6 @@ code --list-extensions | % { "code --install-extension $_" }
 In linux (taken from above bash command):
 
 ```bash
-code --install-extension Extensions installed on WSL: Ubuntu-20.04:
 code --install-extension DavidAnson.vscode-markdownlint
 code --install-extension donjayamanne.githistory
 code --install-extension elmTooling.elm-ls-vscode
