@@ -42,8 +42,7 @@ sudo apt update
 sudo apt install -y docker.io docker-compose google-cloud-sdk google-cloud-sdk-app-engine-python keychain npm python3-venv python3-pip
 
 # Install dependency packages
-sudo apt install -y libffi-dev libgmp-dev
-# sudo apt install -y libtinfo-dev make netbase unzip xz-utils zlib1g-dev zip
+sudo apt install -y libffi-dev libgmp-dev libtinfo-dev
 
 # Init docker
 sudo usermod -aG docker $(whoami)
