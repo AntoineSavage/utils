@@ -5,13 +5,21 @@ USER_NAME="Antoine Savage"
 USER_EMAIL="antoine.savage@gmail.com"
 GITHUB_USERNAME="AntoineSavage"
 
-# Credentials
+echo "=================================================="
+echo "=================================================="
+echo "                Set up credentials                "
+echo "=================================================="
+echo "=================================================="
 if [ `whoami` = 'root' ]; then echo "This program must NOT be run using 'sudo'"; exit; fi
 sudo -v
 while true; do sleep 60; sudo -v; done &
 pid=$!
 
-# Init git & ssh
+echo "=================================================="
+echo "=================================================="
+echo "                 Init git and ssh                 "
+echo "=================================================="
+echo "=================================================="
 git config --global user.name $USER_NAME
 git config --global user.email $USER_EMAIL
 
@@ -27,7 +35,11 @@ cat ~/.ssh/id_ed25519.pub
 echo "=================================================="
 echo "=================================================="
 
-# Install exercism
+echo "=================================================="
+echo "=================================================="
+echo "                 Install exercism                 "
+echo "=================================================="
+echo "=================================================="
 rm -rf temp
 mkdir temp
 cd temp
@@ -37,30 +49,53 @@ sudo mv exercism /usr/bin
 cd ..
 rm -rf temp
 
-# Register google cloud sdk in apt
+echo "=================================================="
+echo "=================================================="
+echo "                  Prepare gcloud                  "
+echo "=================================================="
+echo "=================================================="
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 
-# Install packages
+echo "=================================================="
+echo "=================================================="
+echo "                 Install packages                 "
+echo "=================================================="
+echo "=================================================="
 sudo apt update
 sudo apt install -y docker.io docker-compose google-cloud-sdk google-cloud-sdk-app-engine-python keychain npm python3-venv python3-pip
 
-# Install dependency packages
+echo "=================================================="
+echo "=================================================="
+echo "                 Install bin deps                 "
+echo "=================================================="
+echo "=================================================="
 sudo apt install -y libffi-dev libgmp-dev libtinfo-dev
 
-# Init docker
+echo "=================================================="
+echo "=================================================="
+echo "                   Init docker                    "
+echo "=================================================="
+echo "=================================================="
 sudo usermod -aG docker $(whoami)
 
-# Install elm
+echo "=================================================="
+echo "=================================================="
+echo "                   Install elm                    "
+echo "=================================================="
+echo "=================================================="
 sudo chown -R $(whoami) /usr/local/bin /usr/local/lib /usr/local/include /usr/local/share
 npm install -g npm
 npm install -g elm elm-format elm-test
 npm install -g create-elm-app # must be installed separately
 
-# Install haskell
+echo "=================================================="
+echo "=================================================="
+echo "                 Install haskell                  "
+echo "=================================================="
+echo "=================================================="
 echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
-
 rm -rf temp
 mkdir temp
 cd temp
@@ -82,6 +117,10 @@ stack build
 cd ..
 rm -rf temp
 
-# Clean-up
+echo "=================================================="
+echo "=================================================="
+echo "                     Clean-up                     "
+echo "=================================================="
+echo "=================================================="
 kill $pid
 echo "Please log out and log back in to use docker"
