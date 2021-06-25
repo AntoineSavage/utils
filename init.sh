@@ -20,8 +20,12 @@ chmod 600 ~/.ssh/id_ed25519
 chmod 600 ~/.ssh/id_ed25519.pub
 echo 'eval $(keychain --eval id_ed25519)' >> ~/.bashrc
 
+echo "=================================================="
+echo "=================================================="
 echo "Add the following to github account: https://github.com/settings/ssh/new"
 cat ~/.ssh/id_ed25519.pub
+echo "=================================================="
+echo "=================================================="
 
 # Install exercism
 rm -rf temp
