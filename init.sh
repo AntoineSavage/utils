@@ -70,10 +70,10 @@ tar -xvf linux-x86_64.tar
 sudo install -c -o 0 -g 0 -m 0755 stack*linux*/stack /usr/local/bin
 stack update
 stack upgrade
-sed -i 's/#    author-name:/    author-name: '$USER_NAME'/g' ~/.stack/config.yaml
-sed -i 's/#    author-email:/    author-email: '$USER_EMAIL'/g' ~/.stack/config.yaml
-sed -i 's/#    github-username:/    github-username: '$GITHUB_USERNAME'/g' ~/.stack/config.yaml
-sed -i 's/#    copyright://g' ~/.stack/config.yaml
+sed -i "s/#    author-name:/    author-name: $USER_NAME/g" ~/.stack/config.yaml
+sed -i "s/#    author-email:/    author-email: $USER_EMAIL/g" ~/.stack/config.yaml
+sed -i "s/#    github-username:/    github-username: $GITHUB_USERNAME/g" ~/.stack/config.yaml
+sed -i "s/#    copyright://g" ~/.stack/config.yaml
 cd ..
 rm -rf temp
 stack new temp
