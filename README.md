@@ -2,7 +2,7 @@
 
 ## 1) Main install
 
-This will take about an hour:
+This will take about 25 mins:
 
 ```bash
 wget -qO init.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init.sh && bash init.sh && rm init.sh
@@ -38,11 +38,20 @@ When main install is finished, log out then log back in:
 sudo dockerd
 ```
 
+## 5) Pre-compile haskell dependencies
+
+When main install is finished. This will take about one hour:
+
+```bash
+wget -qO haskell-deps.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/haskell-deps.sh && bash haskell-deps.sh && rm haskell-deps.sh
+```
+
 ## Local env
 
 ### Postgres + dvdrental
 
 https://github.com/Dexels/postgres-debezium-dvdrental
+TODO
 
 ## Troubleshooting
 
