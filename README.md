@@ -2,7 +2,7 @@
 
 ## 1) Main install
 
-This will take about 20 mins:
+This will take about an hour:
 
 ```bash
 wget -qO init.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init.sh && bash init.sh && rm init.sh
