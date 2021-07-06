@@ -18,6 +18,8 @@ In linux:
 code --list-extensions | xargs -L 1 echo code --install-extension
 ```
 
+You might have to run this in the vscode terminal if `code` is not on the PATH
+
 In windows:
 
 ```powershell
@@ -42,6 +44,8 @@ code --install-extension ms-python.vscode-pylance
 code --install-extension ms-toolsai.jupyter
 code --install-extension ms-vscode.test-adapter-converter
 ```
+
+You might have to run this in the vscode terminal if `code` is not on the PATH
 
 In windows (taken from above powershell command):
 
