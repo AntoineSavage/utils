@@ -119,8 +119,24 @@ rm -rf temp
 
 echo "=================================================="
 echo "=================================================="
+echo "                    Install go                    "
+echo "=================================================="
+echo "=================================================="
+rm -rf temp
+mkdir temp
+cd temp
+wget https://golang.org/dl/go1.16.5.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.16.5.linux-amd64.tar.gz
+echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc
+echo "export GOPATH=~/.go" >> ~/.bashrc
+source ~/.bashrc
+cd ..
+rm -rf temp
+
+echo "=================================================="
+echo "=================================================="
 echo "                     Clean-up                     "
 echo "=================================================="
 echo "=================================================="
 kill $pid
-echo "Please log out and log back in to use docker"
+echo "Please log out and log back in"
