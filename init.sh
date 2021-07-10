@@ -63,7 +63,7 @@ echo "                 Install packages                 "
 echo "=================================================="
 echo "=================================================="
 sudo apt update
-sudo apt install -y docker.io docker-compose google-cloud-sdk google-cloud-sdk-app-engine-python keychain npm python3-venv python3-pip
+sudo apt install -y docker.io docker-compose google-cloud-sdk google-cloud-sdk-app-engine-go keychain npm python3-venv python3-pip
 
 echo "=================================================="
 echo "=================================================="
