@@ -65,6 +65,16 @@ ip addr | grep eth0
 
 then copy the ip after 'inet', it's the same ip displayed by elm-app start
 
+### If VSCode cannot connect to WSL
+
+Run the following in linux:
+
+```bash
+code .
+```
+
+It will download the latest vscode wsl server. You can close the vscode afterwards
+
 ### If pgAdmin cannot connect to postgresql
 
 Run the following in powershell:
