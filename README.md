@@ -67,13 +67,25 @@ then copy the ip after 'inet', it's the same ip displayed by elm-app start
 
 ### If VSCode cannot connect to WSL
 
-Run the following in linux:
+`Ctrl` + `Shift` + `P`, type `Remote-WSL: New WSL Window using Distro...`
 
-```bash
-code .
+Then, if the default is `docker-desktop-data`, you need to change the default back to ubuntu. You can also use the following (in windows):
+
+```powershell
+> wslconfig /l
+Windows Subsystem for Linux Distributions:
+docker-desktop-data (Default)
+Ubuntu-20.04
+docker-desktop
 ```
 
-It will download the latest vscode wsl server. You can close the vscode afterwards
+Run the following in powershell:
+
+```powershell
+wslconfig /setdefault Ubuntu-20.04
+```
+
+(And make sure to use the exact name, i.e. `Ubuntu-20.04` in the above example)
 
 ### If pgAdmin cannot connect to postgresql
 
