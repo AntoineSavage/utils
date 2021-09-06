@@ -22,7 +22,7 @@ Into here: <https://github.com/settings/ssh/new>
 
 ## 3) Setup Exercism credentials
 
-Then get token from: <https://exercism.io/my/settings>
+Then get token from: <https://exercism.org/settings/api_cli>
 
 Into here (new terminal):
 
