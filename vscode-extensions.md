@@ -34,17 +34,9 @@ In linux (taken from above bash command):
 code --install-extension DavidAnson.vscode-markdownlint
 code --install-extension donjayamanne.githistory
 code --install-extension elmTooling.elm-ls-vscode
-code --install-extension golang.go
 code --install-extension haskell.haskell
-code --install-extension hbenl.vscode-test-explorer
 code --install-extension justusadam.language-haskell
-code --install-extension masonliu.exercism
 code --install-extension mhutchie.git-graph
-code --install-extension ms-azuretools.vscode-docker
-code --install-extension ms-python.python
-code --install-extension ms-python.vscode-pylance
-code --install-extension ms-toolsai.jupyter
-code --install-extension ms-vscode.test-adapter-converter
 ```
 
 You might have to run this in the vscode terminal if `code` is not on the PATH
@@ -52,10 +44,5 @@ You might have to run this in the vscode terminal if `code` is not on the PATH
 In windows (taken from above powershell command):
 
 ```powershell
-code --install-extension DavidAnson.vscode-markdownlint
-code --install-extension justusadam.language-haskell
-code --install-extension ms-python.python
-code --install-extension ms-python.vscode-pylance
-code --install-extension ms-toolsai.jupyter
 code --install-extension ms-vscode-remote.remote-wsl
 ```

@@ -37,47 +37,11 @@ echo "=================================================="
 
 echo "=================================================="
 echo "=================================================="
-echo "                 Install exercism                 "
-echo "=================================================="
-echo "=================================================="
-rm -rf temp
-mkdir temp
-cd temp
-wget https://github.com/exercism/cli/releases/download/v3.0.13/exercism-linux-64bit.tgz
-tar -xf exercism-linux-64bit.tgz
-sudo mv exercism /usr/bin
-cd ..
-rm -rf temp
-
-echo "=================================================="
-echo "=================================================="
-echo "                  Prepare gcloud                  "
-echo "=================================================="
-echo "=================================================="
-echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
-
-echo "=================================================="
-echo "=================================================="
 echo "                 Install packages                 "
 echo "=================================================="
 echo "=================================================="
 sudo apt update
-sudo apt install -y docker.io docker-compose google-cloud-sdk google-cloud-sdk-app-engine-go keychain npm python3-venv python3-pip
-
-echo "=================================================="
-echo "=================================================="
-echo "                 Install bin deps                 "
-echo "=================================================="
-echo "=================================================="
-sudo apt install -y libffi-dev libgmp-dev libtinfo-dev
-
-echo "=================================================="
-echo "=================================================="
-echo "                   Init docker                    "
-echo "=================================================="
-echo "=================================================="
-sudo usermod -aG docker $(whoami)
+sudo apt install -y keychain npm libffi-dev libgmp-dev libtinfo-dev
 
 echo "=================================================="
 echo "=================================================="
@@ -119,24 +83,7 @@ rm -rf temp
 
 echo "=================================================="
 echo "=================================================="
-echo "                    Install go                    "
-echo "=================================================="
-echo "=================================================="
-rm -rf temp
-mkdir temp
-cd temp
-wget https://golang.org/dl/go1.16.5.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.16.5.linux-amd64.tar.gz
-echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
-echo 'export GOPATH=~/.go' >> ~/.bashrc
-source ~/.bashrc
-cd ..
-rm -rf temp
-
-echo "=================================================="
-echo "=================================================="
 echo "                     Clean-up                     "
 echo "=================================================="
 echo "=================================================="
 kill $pid
-echo "Please log out and log back in"
