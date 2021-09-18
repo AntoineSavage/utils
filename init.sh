@@ -41,7 +41,7 @@ echo "                 Install packages                 "
 echo "=================================================="
 echo "=================================================="
 sudo apt update
-sudo apt install -y keychain npm libffi-dev libgmp-dev libtinfo-dev
+sudo apt install -y keychain npm libffi-dev libgmp-dev libtinfo-dev libz-dev
 
 echo "=================================================="
 echo "=================================================="
