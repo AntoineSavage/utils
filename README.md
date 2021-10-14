@@ -61,3 +61,10 @@ wslconfig /setdefault Ubuntu-20.04
 ```
 
 (And make sure to use the exact name, i.e. `Ubuntu-20.04` in the above example)
+
+
+## ActiveState install
+
+```bash
+wget -qO init.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init_as.sh && bash init_as.sh && rm init_as.sh
+```
