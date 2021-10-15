@@ -5,7 +5,7 @@
 This will take about 25 mins:
 
 ```bash
-wget -qO init.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init.sh && bash init.sh && rm init.sh
+wget -qO - https://raw.githubusercontent.com/AntoineSavage/utils/main/init.sh | bash
 ```
 
 In the meantime...
@@ -66,5 +66,5 @@ wslconfig /setdefault Ubuntu-20.04
 ## ActiveState install
 
 ```bash
-wget -qO init.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/init-activestate.sh && bash init.sh && rm init.sh
+wget -qO - https://raw.githubusercontent.com/AntoineSavage/utils/main/init-activestate.sh | bash
 ```
