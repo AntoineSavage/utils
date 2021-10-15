@@ -24,8 +24,8 @@ echo "                    Update PATH                   "
 echo "=================================================="
 echo "=================================================="
 echo "# set PATH so it includes user's yarn bin if it exists"   >> ~/.profile
-echo 'if [ -d "$HOME/.local/bin" ] ; then'                      >> ~/.profile
-echo '    PATH="$HOME/.local/bin:$PATH"'                        >> ~/.profile
+echo 'if [ -d "$HOME/.yarn/bin" ] ; then'                       >> ~/.profile
+echo '    PATH="$HOME/.yarn/bin:$PATH"'                         >> ~/.profile
 echo "fi"                                                       >> ~/.profile
 
 echo "=================================================="
