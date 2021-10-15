@@ -23,8 +23,14 @@ echo "=================================================="
 echo "                    Update PATH                   "
 echo "=================================================="
 echo "=================================================="
-echo 'export PATH=$HOME/node_modules/bin:=$HOME/.local/bin:$PATH$PATH' >> ~/.bashrc
-source $HOME/.bashrc
+if [ $__INIT_PATH_UPDATED__ ]
+then
+  echo "Path already updated"
+else
+  echo 'export PATH=$HOME/node_modules/bin:=$HOME/.local/bin:$PATH' >> $HOME/.bashrc
+  echo '__INIT_PATH_UPDATED__=1' >> $HOME/.bashrc
+  source $HOME/.bashrc
+fi
 
 echo "=================================================="
 echo "=================================================="
@@ -92,11 +98,11 @@ echo "                Install dev tools                 "
 echo "=================================================="
 echo "=================================================="
 ./install-dev-tools.sh
+cd ../..
 
 echo "=================================================="
 echo "=================================================="
 echo "                     Clean-up                     "
 echo "=================================================="
 echo "=================================================="
-source $HOME/.bashrc
 kill $pid
