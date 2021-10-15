@@ -23,14 +23,11 @@ echo "=================================================="
 echo "                    Update PATH                   "
 echo "=================================================="
 echo "=================================================="
-if [ $__INIT_PATH_UPDATED__ ]
-then
-  echo "Path already updated"
-else
-  echo 'export PATH="$HOME/.yarn/bin:$HOME/.local/bin:$PATH"' >> $HOME/.bashrc
-  echo 'export __INIT_PATH_UPDATED__=1' >> $HOME/.bashrc
-  source $HOME/.bashrc
-fi
+case ":$PATH:" in
+  *:$HOME/.yarn/bin:*) echo 'Path already updated';;
+  *) echo 'export PATH="$HOME/.yarn/bin:$HOME/.local/bin:$PATH"' >> $HOME/.bashrc ;;
+esac
+source $HOME/.bashrc
 
 echo "=================================================="
 echo "=================================================="
