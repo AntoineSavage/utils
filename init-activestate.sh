@@ -24,10 +24,13 @@ echo "                    Update PATH                   "
 echo "=================================================="
 echo "=================================================="
 case ":$PATH:" in
-  *:$HOME/.yarn/bin:*) echo 'Path already updated';;
-  *) echo 'export PATH="$HOME/.yarn/bin:$HOME/.local/bin:$PATH"' >> $HOME/.bashrc ;;
+  *:$HOME/.yarn/bin:*) echo 'Path already updated (~/.yarn/bin)';;
+  *) echo 'PATH="$HOME/.yarn/bin:$PATH"' >> $HOME/.bashrc ;;
 esac
-source $HOME/.bashrc
+case ":$PATH:" in
+  *:$HOME/.local/bin:*) echo 'Path already updated (~/.local/bin)';;
+  *) echo 'PATH="$HOME/.local/bin:$PATH"' >> $HOME/.bashrc ;;
+esac
 
 echo "=================================================="
 echo "=================================================="
