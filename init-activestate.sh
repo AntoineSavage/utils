@@ -1,5 +1,9 @@
 #! /bin/bash
 
+# Requirements (windows-side)
+# - Git for windows
+# - Git credential manager (core install, not user install)
+
 # Inputs
 USER_NAME="Antoine Savage"
 USER_EMAIL="antoines@activestate.com"
