@@ -25,7 +25,7 @@ Into here: <https://github.com/settings/ssh/new>
 When main install is finished. This will take about one hour:
 
 ```bash
-wget -qO haskell-deps.sh https://raw.githubusercontent.com/AntoineSavage/utils/main/haskell-deps.sh && bash haskell-deps.sh && rm haskell-deps.sh
+wget -qO - https://raw.githubusercontent.com/AntoineSavage/utils/main/haskell-deps.sh | bash
 ```
 
 ## Troubleshooting
