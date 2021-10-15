@@ -23,14 +23,10 @@ echo "=================================================="
 echo "                    Update PATH                   "
 echo "=================================================="
 echo "=================================================="
-case ":$PATH:" in
-  *:$HOME/.yarn/bin:*) echo 'Path already updated (~/.yarn/bin)';;
-  *) echo 'PATH="$HOME/.yarn/bin:$PATH"' >> $HOME/.bashrc ;;
-esac
-case ":$PATH:" in
-  *:$HOME/.local/bin:*) echo 'Path already updated (~/.local/bin)';;
-  *) echo 'PATH="$HOME/.local/bin:$PATH"' >> $HOME/.bashrc ;;
-esac
+echo "# set PATH so it includes user's yarn bin if it exists"   >> ~/.profile
+echo 'if [ -d "$HOME/.local/bin" ] ; then'                      >> ~/.profile
+echo '    PATH="$HOME/.local/bin:$PATH"'                        >> ~/.profile
+echo "fi"                                                       >> ~/.profile
 
 echo "=================================================="
 echo "=================================================="
@@ -104,4 +100,5 @@ echo "=================================================="
 echo "                     Clean-up                     "
 echo "=================================================="
 echo "=================================================="
+source ~/.profile
 kill $pid
