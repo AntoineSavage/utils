@@ -58,8 +58,10 @@ echo "=================================================="
 echo "                   Install bazel                  "
 echo "=================================================="
 echo "=================================================="
+mkdir -p $HOME/bin
+export GOBIN=$HOME/bin
 go install github.com/bazelbuild/bazelisk@latest
-sudo ln -sf ~/go/bin/bazelisk /usr/local/bin/bazel
+sudo ln -sf $HOME/bin/bazelisk /usr/local/bin/bazel
 
 echo "=================================================="
 echo "=================================================="
@@ -70,6 +72,7 @@ mkdir github
 cd github
 git clone https://github.com/ActiveState/TheHomeRepot.git
 cd TheHomeRepot
+git checkout local-setup-fixes # TODO Remove once merged to master
 
 echo "=================================================="
 echo "=================================================="
