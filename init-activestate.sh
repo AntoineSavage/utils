@@ -87,7 +87,6 @@ mkdir github
 cd github
 git clone https://github.com/ActiveState/TheHomeRepot.git
 cd TheHomeRepot
-git checkout local-setup-fixes # TODO Remove once merged to master
 
 echo "=================================================="
 echo "=================================================="
