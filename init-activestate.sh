@@ -7,6 +7,7 @@
 # Inputs
 USER_NAME="Antoine Savage"
 USER_EMAIL="antoines@activestate.com"
+GITHUB_USERNAME="antoine-activestate"
 
 echo "=================================================="
 echo "=================================================="
@@ -67,6 +68,52 @@ echo "                    Install elm                  "
 echo "=================================================="
 echo "=================================================="
 yarn global add elm elm-test elm-format@0.8.1
+
+
+echo "=================================================="
+echo "=================================================="
+echo "                 Install packages                 "
+echo "=================================================="
+echo "=================================================="
+sudo apt update
+sudo apt install -y keychain npm libffi-dev libgmp-dev libtinfo-dev libz-dev
+
+echo "=================================================="
+echo "=================================================="
+echo "                   Install elm                    "
+echo "=================================================="
+echo "=================================================="
+sudo chown -R $(whoami) /usr/local/bin /usr/local/lib /usr/local/include /usr/local/share
+npm install -g npm
+npm install -g elm elm-format elm-test
+npm install -g create-elm-app # must be installed separately
+
+echo "=================================================="
+echo "=================================================="
+echo "                 Install haskell                  "
+echo "=================================================="
+echo "=================================================="
+rm -rf temp
+mkdir temp
+cd temp
+wget https://get.haskellstack.org/stable/linux-x86_64.tar.gz
+gzip -d linux-x86_64.tar.gz
+tar -xvf linux-x86_64.tar
+sudo install -c -o 0 -g 0 -m 0755 stack*linux*/stack /usr/local/bin
+stack update
+stack upgrade
+sed -i "s/#    author-name:/    author-name: $USER_NAME/g" ~/.stack/config.yaml
+sed -i "s/#    author-email:/    author-email: $USER_EMAIL/g" ~/.stack/config.yaml
+sed -i "s/#    github-username:/    github-username: $GITHUB_USERNAME/g" ~/.stack/config.yaml
+sed -i "s/#    copyright://g" ~/.stack/config.yaml
+cd ..
+rm -rf temp
+stack new temp
+cd temp
+stack install aeson async containers doctest hspec parsec postgresql-typed QuickCheck sensei servant stm text time utf8-string wai wai-cors wai-websockets warp websockets
+stack build
+cd ..
+rm -rf temp
 
 echo "=================================================="
 echo "=================================================="
