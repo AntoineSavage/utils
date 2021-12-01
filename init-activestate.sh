@@ -3,6 +3,7 @@
 # Requirements (windows-side)
 # - Git for windows
 # - Git credential manager (core install, not user install)
+# - VSCode, with WSL extension
 
 # Inputs
 USER_NAME="Antoine Savage"
@@ -113,7 +114,7 @@ echo "=================================================="
 echo "                Clone TheHomeRepot                "
 echo "=================================================="
 echo "=================================================="
-mkdir github
+mkdir -p github
 cd github
 git clone https://github.com/ActiveState/TheHomeRepot.git
 cd TheHomeRepot
@@ -124,6 +125,28 @@ echo "                Install dev tools                 "
 echo "=================================================="
 echo "=================================================="
 ./install-dev-tools.sh
+
+echo "=================================================="
+echo "=================================================="
+echo "            Install vscode extensions             "
+echo "=================================================="
+echo "=================================================="
+code --install-extension DavidAnson.vscode-markdownlint
+code --install-extension donjayamanne.githistory
+code --install-extension dramforever.vscode-ghc-simple
+code --install-extension elmTooling.elm-ls-vscode
+code --install-extension golang.go
+code --install-extension haskell.haskell
+code --install-extension hbenl.vscode-test-explorer
+code --install-extension justusadam.language-haskell
+code --install-extension mhutchie.git-graph
+code --install-extension ms-python.python
+code --install-extension ms-python.vscode-pylance
+code --install-extension ms-toolsai.jupyter
+code --install-extension ms-toolsai.jupyter-keymap
+code --install-extension ms-toolsai.jupyter-renderers
+code --install-extension ms-vscode.test-adapter-converter
+code --install-extension waderyan.gitblame
 
 echo "=================================================="
 echo "=================================================="
