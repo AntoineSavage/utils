@@ -29,6 +29,8 @@ echo "# set PATH so it includes user's yarn bin if it exists"   >> ~/.profile
 echo 'if [ -d "$HOME/.yarn/bin" ] ; then'                       >> ~/.profile
 echo '    PATH="$HOME/.yarn/bin:$PATH"'                         >> ~/.profile
 echo "fi"                                                       >> ~/.profile
+echo ""                                                         >> ~/.profile
+echo "eval `perl -I ~/perl5/lib/perl5 -Mlocal::lib`"            >> ~/.profile
 
 echo "=================================================="
 echo "=================================================="
