@@ -168,5 +168,6 @@ echo "=================================================="
 echo "                     Clean-up                     "
 echo "=================================================="
 echo "=================================================="
-source ~/.profile
 kill $pid
+
+echo "Restart your shell to complete this installation."
