@@ -146,6 +146,7 @@ code --install-extension ms-toolsai.jupyter
 code --install-extension ms-toolsai.jupyter-keymap
 code --install-extension ms-toolsai.jupyter-renderers
 code --install-extension ms-vscode.test-adapter-converter
+code --install-extension Tyriar.sort-lines
 code --install-extension waderyan.gitblame
 
 echo "=================================================="
