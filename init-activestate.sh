@@ -155,7 +155,7 @@ echo "           Setup docker non-sudo access           "
 echo "=================================================="
 echo "=================================================="
 sudo groupadd docker
-sudo usermod -AK docker $USER
+sudo usermod -aG docker $USER
 
 echo "=================================================="
 echo "=================================================="
