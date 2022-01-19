@@ -56,7 +56,8 @@ echo "                 Install packages                 "
 echo "=================================================="
 echo "=================================================="
 sudo apt update
-sudo apt install -y docker.io golang-go nodejs build-essential perl curl libssl-dev zlib1g-dev python3-pip sqitch libdbd-pg-perl postgresql-client libffi-dev libgmp-dev libtinfo-dev libz-dev
+sudo apt upgrade -y
+sudo apt install -y docker.io golang-go nodejs build-essential perl curl libssl-dev zlib1g-dev python3-pip sqitch libdbd-pg-perl postgresql-client libffi-dev libgmp-dev libtinfo-dev libz-dev default-jre
 
 echo "=================================================="
 echo "=================================================="
