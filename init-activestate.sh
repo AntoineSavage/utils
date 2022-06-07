@@ -56,7 +56,7 @@ echo "=================================================="
 echo "=================================================="
 sudo apt update
 sudo apt upgrade -y
-sudo apt install -y docker.io golang-go nodejs build-essential perl curl libssl-dev zlib1g-dev python3-pip sqitch libdbd-pg-perl postgresql-client libffi-dev libgmp-dev libtinfo-dev libz-dev default-jre
+sudo apt install -y build-essential curl default-jre docker.io golang-go libdbd-pg-perl libffi-dev libgmp-dev libssl-dev libtinfo-dev libz-dev nodejs perl postgresql-client python3-pip sqitch zlib1g-dev
 
 echo "=================================================="
 echo "=================================================="
@@ -94,7 +94,7 @@ cd ..
 rm -rf temp
 stack new temp
 cd temp
-stack install aeson async containers doctest happy hindent hsc2hs hspec parsec postgresql-typed QuickCheck sensei servant stm stylish-haskell text time utf8-string wai wai-cors wai-websockets warp websockets
+stack install aeson async containers doctest happy hindent hsc2hs hspec parsec postgresql-typed QuickCheck sensei servant stm text time utf8-string wai wai-cors wai-websockets warp websockets
 stack build
 cd ..
 rm -rf temp
