@@ -95,7 +95,7 @@ cd ..
 rm -rf temp
 stack new temp
 cd temp
-stack install aeson async containers doctest hspec parsec postgresql-typed QuickCheck sensei servant stm text time utf8-string wai wai-cors wai-websockets warp websockets
+stack install aeson async containers doctest happy hindent hsc2hs hspec parsec postgresql-typed QuickCheck sensei servant stm stylish-haskell text time utf8-string wai wai-cors wai-websockets warp websockets
 stack build
 cd ..
 rm -rf temp
