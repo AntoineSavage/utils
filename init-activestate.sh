@@ -163,7 +163,7 @@ echo "=================================================="
 echo "              Install the State Tool              "
 echo "=================================================="
 echo "=================================================="
-sh <(curl -q https://platform.activestate.com/dl/cli/install.sh) -b beta
+sh <(curl -q https://platform.activestate.com/dl/cli/install.sh)
 
 echo "=================================================="
 echo "=================================================="
