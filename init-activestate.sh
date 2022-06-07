@@ -56,7 +56,7 @@ echo "=================================================="
 echo "=================================================="
 sudo apt update
 sudo apt upgrade -y
-sudo apt install -y build-essential curl default-jre docker.io golang-go libdbd-pg-perl libffi-dev libgmp-dev libssl-dev libtinfo-dev libz-dev nodejs perl postgresql-client python3-pip sqitch zlib1g-dev
+sudo apt install -y build-essential curl default-jre docker.io golang-go libdbd-pg-perl libffi-dev libgmp-dev libssl-dev libtinfo-dev libz-dev nodejs npm perl postgresql-client python3-pip sqitch zlib1g-dev
 
 echo "=================================================="
 echo "=================================================="
