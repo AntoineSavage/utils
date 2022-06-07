@@ -31,6 +31,7 @@ echo 'if [ -d "$HOME/.yarn/bin" ] ; then'                       >> ~/.profile
 echo '    PATH="$HOME/.yarn/bin:$PATH"'                         >> ~/.profile
 echo "fi"                                                       >> ~/.profile
 echo ""                                                         >> ~/.profile
+echo 'PATH="$HOME/github/TheHomeRepot/third_party/bin:$PATH"'   >> ~/.profile
 
 echo "=================================================="
 echo "=================================================="
