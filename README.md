@@ -20,14 +20,6 @@ cat ~/.ssh/id_ed25519.pub
 
 Into here: <https://github.com/settings/ssh/new>
 
-## 3) Pre-compile haskell dependencies
-
-When main install is finished. This will take about one hour:
-
-```bash
-wget -qO - https://raw.githubusercontent.com/AntoineSavage/utils/main/haskell-deps.sh | bash
-```
-
 ## Troubleshooting
 
 ### If linux localhost is unreachable from windows
