@@ -21,7 +21,6 @@ echo "=================================================="
 if [ `whoami` = 'root' ]; then echo "This program must NOT be run using 'sudo'"; exit; fi
 sudo -v
 bash -c "while true; do sleep 10; sudo -v; done" &
-pid=$!
 
 echo "=================================================="
 echo "=================================================="
@@ -45,6 +44,14 @@ echo "=================================================="
 git config --global user.name $USER_NAME
 git config --global user.email $USER_EMAIL
 git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager-core.exe"
+
+echo "=================================================="
+echo "=================================================="
+echo "           Setup docker non-sudo access           "
+echo "=================================================="
+echo "=================================================="
+sudo groupadd docker
+sudo usermod -aG docker $USER
 
 echo "=================================================="
 echo "=================================================="
@@ -149,14 +156,6 @@ code --install-extension waderyan.gitblame
 
 echo "=================================================="
 echo "=================================================="
-echo "           Setup docker non-sudo access           "
-echo "=================================================="
-echo "=================================================="
-sudo groupadd docker
-sudo usermod -aG docker $USER
-
-echo "=================================================="
-echo "=================================================="
 echo "              Install the State Tool              "
 echo "=================================================="
 echo "=================================================="
@@ -167,6 +166,5 @@ echo "=================================================="
 echo "                     Clean-up                     "
 echo "=================================================="
 echo "=================================================="
-kill $pid
 
-echo "Restart your shell to complete this installation."
+echo "Run in powershell: wsl --shutdown"
