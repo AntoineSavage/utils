@@ -93,16 +93,6 @@ curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | BOOTSTRAP_H
 source $HOME/.ghcup/env
 stack config set install-ghc false --global
 stack config set system-ghc  true  --global
-sed -i "s/#    author-name:/    author-name: $USER_NAME/g" ~/.stack/config.yaml
-sed -i "s/#    author-email:/    author-email: $USER_EMAIL/g" ~/.stack/config.yaml
-sed -i "s/#    github-username:/    github-username: $GITHUB_USERNAME/g" ~/.stack/config.yaml
-sed -i "s/#    copyright://g" ~/.stack/config.yaml
-stack new temp
-cd temp
-stack install aeson async containers doctest happy hindent hsc2hs hspec parsec postgresql-typed QuickCheck sensei servant stm text time utf8-string wai wai-cors wai-websockets warp websockets
-stack build
-cd ..
-rm -rf temp
 
 echo "=================================================="
 echo "=================================================="
