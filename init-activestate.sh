@@ -17,7 +17,7 @@ echo "=================================================="
 echo "=================================================="
 if [ `whoami` = 'root' ]; then echo "This program must NOT be run using 'sudo'"; exit; fi
 sudo -v
-while true; do sleep 60; sudo -v; done &
+while true; do sleep 30; sudo -v; done &
 pid=$!
 
 echo "=================================================="
@@ -32,6 +32,7 @@ echo '    PATH="$HOME/.yarn/bin:$PATH"'                         >> ~/.profile
 echo "fi"                                                       >> ~/.profile
 echo ""                                                         >> ~/.profile
 echo 'PATH="$HOME/github/TheHomeRepot/third_party/bin:$PATH"'   >> ~/.profile
+echo 'eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"'      >> ~/.profile
 
 echo "=================================================="
 echo "=================================================="
@@ -126,7 +127,6 @@ echo "                Install dev tools                 "
 echo "=================================================="
 echo "=================================================="
 ./install-dev-tools.sh
-echo "`perl -I ~/perl5/lib/perl5 -Mlocal::lib`" >> ~/.profile
 
 echo "=================================================="
 echo "=================================================="
