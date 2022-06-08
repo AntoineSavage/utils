@@ -12,21 +12,17 @@ set -e
 USER_NAME="Antoine Savage"
 USER_EMAIL="antoines@activestate.com"
 GITHUB_USERNAME="antoine-activestate"
+UNIX_USERNAME="antoines"
 
 echo "=================================================="
 echo "=================================================="
-echo "             Set-up sudo credentials              "
+echo "               Set-up credentials                 "
 echo "=================================================="
 echo "=================================================="
 if [ `whoami` = 'root' ]; then echo "This program must NOT be run using 'sudo'"; exit; fi
 sudo -v
 bash -c "while true; do sleep 10; sudo -v; done" &
 
-echo "=================================================="
-echo "=================================================="
-echo "                    Update PATH                   "
-echo "=================================================="
-echo "=================================================="
 echo ""                                                         >> ~/.profile
 echo "# set PATH so it includes user's yarn bin if it exists"   >> ~/.profile
 echo 'if [ -d "$HOME/.yarn/bin" ] ; then'                       >> ~/.profile
@@ -36,22 +32,15 @@ echo ""                                                         >> ~/.profile
 echo 'PATH="$HOME/github/TheHomeRepot/third_party/bin:$PATH"'   >> ~/.profile
 echo 'eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"'      >> ~/.profile
 
-echo "=================================================="
-echo "=================================================="
-echo "                 Init git config                  "
-echo "=================================================="
-echo "=================================================="
 git config --global user.name $USER_NAME
 git config --global user.email $USER_EMAIL
 git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager-core.exe"
 
-echo "=================================================="
-echo "=================================================="
-echo "           Setup docker non-sudo access           "
-echo "=================================================="
-echo "=================================================="
 sudo groupadd docker
 sudo usermod -aG docker $USER
+
+echo '[user]'                   >> /etc/wsl.conf
+echo "default=$UNIX_USERNAME"   >> /etc/wsl.conf
 
 echo "=================================================="
 echo "=================================================="
