@@ -86,8 +86,6 @@ sed -i "s/#    author-name:/    author-name: $USER_NAME/g" ~/.stack/config.yaml
 sed -i "s/#    author-email:/    author-email: $USER_EMAIL/g" ~/.stack/config.yaml
 sed -i "s/#    github-username:/    github-username: $GITHUB_USERNAME/g" ~/.stack/config.yaml
 sed -i "s/#    copyright://g" ~/.stack/config.yaml
-cd ..
-rm -rf temp
 stack new temp
 cd temp
 stack install aeson async containers doctest happy hindent hsc2hs hspec parsec postgresql-typed QuickCheck sensei servant stm text time utf8-string wai wai-cors wai-websockets warp websockets
