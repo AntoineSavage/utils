@@ -17,7 +17,7 @@ echo "=================================================="
 echo "=================================================="
 if [ `whoami` = 'root' ]; then echo "This program must NOT be run using 'sudo'"; exit; fi
 sudo -v
-while true; do sleep 30; sudo -v; done &
+bash -c "while true; do sleep 10; sudo -v; done" &
 pid=$!
 
 echo "=================================================="
