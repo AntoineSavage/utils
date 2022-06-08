@@ -58,7 +58,7 @@ echo "=================================================="
 echo "=================================================="
 sudo apt update
 sudo apt upgrade -y
-sudo apt install -y build-essential curl default-jre docker.io golang-go libdbd-pg-perl libffi-dev libgmp-dev libssl-dev libtinfo-dev libz-dev nodejs perl postgresql-client python3-pip sqitch zlib1g-dev
+sudo apt install -y build-essential curl default-jre docker.io golang-go libncurses5 libncurses-dev libdbd-pg-perl libffi7 libffi-dev libgmp10 libgmp-dev libssl-dev libtinfo5 libtinfo-dev libz-dev nodejs perl postgresql-client python3-pip sqitch zlib1g-dev
 
 echo "=================================================="
 echo "=================================================="
@@ -100,7 +100,6 @@ stack install aeson async containers doctest happy hindent hsc2hs hspec parsec p
 stack build
 cd ..
 rm -rf temp
-curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 
 echo "=================================================="
 echo "=================================================="
