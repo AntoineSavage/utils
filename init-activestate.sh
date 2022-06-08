@@ -100,6 +100,7 @@ stack install aeson async containers doctest happy hindent hsc2hs hspec parsec p
 stack build
 cd ..
 rm -rf temp
+curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 
 echo "=================================================="
 echo "=================================================="
