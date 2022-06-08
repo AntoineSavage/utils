@@ -79,13 +79,7 @@ echo "=================================================="
 echo "                 Install haskell                  "
 echo "=================================================="
 echo "=================================================="
-rm -rf temp
-mkdir temp
-cd temp
-wget https://get.haskellstack.org/stable/linux-x86_64.tar.gz
-gzip -d linux-x86_64.tar.gz
-tar -xvf linux-x86_64.tar
-sudo install -c -o 0 -g 0 -m 0755 stack*linux*/stack /usr/local/bin
+curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | BOOTSTRAP_HASKELL_NONINTERACTIVE=1 BOOTSTRAP_HASKELL_INSTALL_STACK=1 BOOTSTRAP_HASKELL_INSTALL_HLS=1 BOOTSTRAP_HASKELL_ADJUST_BASHRC=1 sh
 stack update
 stack upgrade
 sed -i "s/#    author-name:/    author-name: $USER_NAME/g" ~/.stack/config.yaml
