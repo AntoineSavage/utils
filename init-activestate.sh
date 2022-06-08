@@ -1,5 +1,8 @@
 #! /bin/bash
 
+# Exit if any command fails
+set -e
+
 # Requirements (windows-side)
 # - Git for windows
 # - Git credential manager (core install, not user install)
@@ -80,6 +83,7 @@ echo "                 Install haskell                  "
 echo "=================================================="
 echo "=================================================="
 curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | BOOTSTRAP_HASKELL_NONINTERACTIVE=1 BOOTSTRAP_HASKELL_INSTALL_STACK=1 BOOTSTRAP_HASKELL_INSTALL_HLS=1 BOOTSTRAP_HASKELL_ADJUST_BASHRC=1 sh
+source $HOME/.ghcup/env
 stack update
 stack upgrade
 sed -i "s/#    author-name:/    author-name: $USER_NAME/g" ~/.stack/config.yaml
