@@ -91,8 +91,8 @@ echo "=================================================="
 echo "=================================================="
 curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | BOOTSTRAP_HASKELL_NONINTERACTIVE=1 BOOTSTRAP_HASKELL_INSTALL_STACK=1 BOOTSTRAP_HASKELL_INSTALL_HLS=1 BOOTSTRAP_HASKELL_ADJUST_BASHRC=1 sh
 source $HOME/.ghcup/env
-stack update
-stack upgrade
+stack config set install-ghc false --global
+stack config set system-ghc  true  --global
 sed -i "s/#    author-name:/    author-name: $USER_NAME/g" ~/.stack/config.yaml
 sed -i "s/#    author-email:/    author-email: $USER_EMAIL/g" ~/.stack/config.yaml
 sed -i "s/#    github-username:/    github-username: $GITHUB_USERNAME/g" ~/.stack/config.yaml
