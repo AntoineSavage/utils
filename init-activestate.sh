@@ -16,7 +16,7 @@ UNIX_USERNAME="antoines"
 
 echo "=================================================="
 echo "=================================================="
-echo "               Set-up credentials                 "
+echo "                 Configure user                   "
 echo "=================================================="
 echo "=================================================="
 if [ `whoami` = 'root' ]; then echo "This program must NOT be run using 'sudo'"; exit; fi
@@ -30,6 +30,7 @@ echo '    PATH="$HOME/.yarn/bin:$PATH"'                         >> ~/.profile
 echo "fi"                                                       >> ~/.profile
 echo ""                                                         >> ~/.profile
 echo 'PATH="$HOME/github/TheHomeRepot/third_party/bin:$PATH"'   >> ~/.profile
+echo 'PATH="$HOME/.local/bin:$PATH"'                            >> ~/.profile
 echo 'eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"'      >> ~/.profile
 
 git config --global user.name $USER_NAME
