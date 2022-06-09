@@ -121,6 +121,7 @@ code --install-extension donjayamanne.githistory
 code --install-extension dramforever.vscode-ghc-simple
 code --install-extension elmTooling.elm-ls-vscode
 code --install-extension golang.go
+code --install-extension GraphQL.vscode-graphql
 code --install-extension haskell.haskell
 code --install-extension hbenl.vscode-test-explorer
 code --install-extension justusadam.language-haskell
@@ -131,6 +132,7 @@ code --install-extension ms-toolsai.jupyter
 code --install-extension ms-toolsai.jupyter-keymap
 code --install-extension ms-toolsai.jupyter-renderers
 code --install-extension ms-vscode.test-adapter-converter
+code --install-extension shardulm94.trailing-spaces
 code --install-extension Tyriar.sort-lines
 code --install-extension waderyan.gitblame
 
