@@ -40,8 +40,8 @@ git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec
 sudo groupadd docker
 sudo usermod -aG docker $USER
 
-echo '[user]'                   >> /etc/wsl.conf
-echo "default=$UNIX_USERNAME"   >> /etc/wsl.conf
+sudo echo '[user]'                   >> /etc/wsl.conf
+sudo echo "default=$UNIX_USERNAME"   >> /etc/wsl.conf
 
 echo "=================================================="
 echo "=================================================="
