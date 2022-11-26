@@ -109,6 +109,7 @@ echo "                Install dev tools                 "
 echo "=================================================="
 echo "=================================================="
 ./install-dev-tools.sh
+cp ~/github/TheHomeRepot/third_party/bin/swagger-codegen-cli.jar ~/bin
 
 echo "=================================================="
 echo "=================================================="
@@ -122,6 +123,7 @@ echo "=================================================="
 echo "            Install vscode extensions             "
 echo "=================================================="
 echo "=================================================="
+code --install-extension bcanzanella.openmatchingfiles
 code --install-extension DavidAnson.vscode-markdownlint
 code --install-extension donjayamanne.githistory
 code --install-extension dramforever.vscode-ghc-simple
