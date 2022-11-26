@@ -109,14 +109,13 @@ echo "                Install dev tools                 "
 echo "=================================================="
 echo "=================================================="
 ./install-dev-tools.sh
-cp ~/github/TheHomeRepot/third_party/bin/swagger-codegen-cli.jar ~/bin
 
 echo "=================================================="
 echo "=================================================="
 echo "             Install swagger-gen-cli              "
 echo "=================================================="
 echo "=================================================="
-wget https://search.maven.org/remotecontent?filepath=io/swagger/swagger-codegen-cli/2.4.8/swagger-codegen-cli-2.4.8.jar -O ~/bin/swagger-codegen-cli.jar
+cp ~/github/TheHomeRepot/third_party/bin/swagger-codegen-cli.jar ~/bin
 
 echo "=================================================="
 echo "=================================================="
