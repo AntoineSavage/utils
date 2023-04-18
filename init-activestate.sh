@@ -57,7 +57,15 @@ echo "=================================================="
 echo "=================================================="
 sudo apt update
 sudo apt upgrade -y
-sudo apt install -y build-essential curl default-jre docker.io golang-go libncurses5 libncurses-dev libdbd-pg-perl libffi7 libffi-dev libgmp10 libgmp-dev libssl-dev libtinfo5 libtinfo-dev libz-dev nodejs perl postgresql-client python3-pip sqitch zlib1g-dev
+sudo apt install -y build-essential curl default-jre docker.io golang-go hugo libncurses5 libncurses-dev libdbd-pg-perl libffi7 libffi-dev libgmp10 libgmp-dev libssl-dev libtinfo5 libtinfo-dev libz-dev nodejs perl postgresql-client python3 python-is-python3 python3-pip sqitch zlib1g-dev
+
+echo "=================================================="
+echo "=================================================="
+echo "                  Configure sqitch                "
+echo "=================================================="
+echo "=================================================="
+sqitch config --user user.name $USER_NAME
+sqitch config --user user.email $USER_EMAIL
 
 echo "=================================================="
 echo "=================================================="
@@ -112,9 +120,17 @@ echo "=================================================="
 
 echo "=================================================="
 echo "=================================================="
-echo "             Install swagger-gen-cli              "
+echo "              Install yarn githooks               "
 echo "=================================================="
 echo "=================================================="
+cd extras/githooks && bazel run //:yarn install && cd -
+
+echo "=================================================="
+echo "=================================================="
+echo "                 Install swagger                  "
+echo "=================================================="
+echo "=================================================="
+go get -u github.com/go-swagger/go-swagger/cmd/swagger
 cp ~/github/TheHomeRepot/third_party/bin/swagger-codegen-cli.jar ~/bin
 
 echo "=================================================="
