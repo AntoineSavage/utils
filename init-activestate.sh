@@ -23,15 +23,16 @@ if [ `whoami` = 'root' ]; then echo "This program must NOT be run using 'sudo'";
 sudo -v
 bash -c "while true; do sleep 10; sudo -v; done" &
 
-echo ""                                                         >> ~/.profile
-echo "# set PATH so it includes user's yarn bin if it exists"   >> ~/.profile
-echo 'if [ -d "$HOME/.yarn/bin" ] ; then'                       >> ~/.profile
-echo '    PATH="$HOME/.yarn/bin:$PATH"'                         >> ~/.profile
-echo "fi"                                                       >> ~/.profile
-echo ""                                                         >> ~/.profile
-echo 'PATH="$HOME/github/TheHomeRepot/third_party/bin:$PATH"'   >> ~/.profile
-echo 'PATH="$HOME/.local/bin:$PATH"'                            >> ~/.profile
-echo 'eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"'      >> ~/.profile
+echo ""                                                                     >> ~/.profile
+echo "# set PATH so it includes user's yarn bin if it exists"               >> ~/.profile
+echo 'if [ -d "$HOME/.yarn/bin" ] ; then'                                   >> ~/.profile
+echo '    PATH="$HOME/.yarn/bin:$PATH"'                                     >> ~/.profile
+echo "fi"                                                                   >> ~/.profile
+echo ""                                                                     >> ~/.profile
+echo 'PATH="$HOME/github/TheHomeRepot/third_party/bin:$PATH"'               >> ~/.profile
+echo 'PATH="$HOME/.local/bin:$PATH"'                                        >> ~/.profile
+echo 'alias clear="TERMINFO=/usr/share/terminfo TERM=xterm /usr/bin/clear"' >> ~/.bashrc
+echo 'AWS_PROFILE=sso'                                                      >> ~/.bashrc
 
 git config --global user.name $USER_NAME
 git config --global user.email $USER_EMAIL
@@ -42,13 +43,19 @@ sudo usermod -aG docker $USER
 
 sudo bash -c "echo -e '[user]\ndefault=$UNIX_USERNAME' >> /etc/wsl.conf"
 
+mkdir -p ~/.aws
+touch ~/.aws/config
+
+sudo apt update && sudo apt upgrade
+sudo do-release-upgrade
+
 echo "=================================================="
 echo "=================================================="
 echo "                Add packages sites                "
 echo "=================================================="
 echo "=================================================="
 sudo add-apt-repository -y ppa:longsleep/golang-backports
-curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+curl -fsSL https://deb.nodesource.com/setup_21.x | sudo -E bash -
 
 echo "=================================================="
 echo "=================================================="
@@ -57,7 +64,7 @@ echo "=================================================="
 echo "=================================================="
 sudo apt update
 sudo apt upgrade -y
-sudo apt install -y build-essential curl default-jre docker.io golang-go hugo libncurses5 libncurses-dev libdbd-pg-perl libffi7 libffi-dev libgmp10 libgmp-dev libssl-dev libtinfo5 libtinfo-dev libz-dev nodejs perl postgresql-client python3 python-is-python3 python3-pip sqitch zlib1g-dev
+sudo apt install -y awscli build-essential curl default-jre docker.io golang-go hugo libgtk2.0-0 libgtk-3-0 libgbm-dev libncurses5 libncurses-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb libdbd-pg-perl libffi7 libffi-dev libgmp10 libgmp-dev libssl-dev libtinfo5 libtinfo-dev libz-dev nodejs perl postgresql-client python3 python-is-python3 python3-pip sqitch zlib1g-dev
 
 echo "=================================================="
 echo "=================================================="
@@ -132,24 +139,32 @@ echo "            Install vscode extensions             "
 echo "=================================================="
 echo "=================================================="
 code --install-extension bcanzanella.openmatchingfiles
-code --install-extension DavidAnson.vscode-markdownlint
+code --install-extension davidanson.vscode-markdownlint
 code --install-extension donjayamanne.githistory
 code --install-extension dramforever.vscode-ghc-simple
-code --install-extension elmTooling.elm-ls-vscode
+code --install-extension elmtooling.elm-ls-vscode
+code --install-extension fabiospampinato.vscode-open-in-github
 code --install-extension golang.go
-code --install-extension GraphQL.vscode-graphql
+code --install-extension graphql.vscode-graphql
+code --install-extension graphql.vscode-graphql-syntax
 code --install-extension haskell.haskell
 code --install-extension hbenl.vscode-test-explorer
 code --install-extension justusadam.language-haskell
+code --install-extension littlefoxteam.vscode-python-test-adapter
 code --install-extension mhutchie.git-graph
+code --install-extension ms-python.debugpy
 code --install-extension ms-python.python
 code --install-extension ms-python.vscode-pylance
 code --install-extension ms-toolsai.jupyter
 code --install-extension ms-toolsai.jupyter-keymap
 code --install-extension ms-toolsai.jupyter-renderers
+code --install-extension ms-toolsai.vscode-jupyter-cell-tags
+code --install-extension ms-toolsai.vscode-jupyter-slideshow
+code --install-extension ms-vscode.live-server
 code --install-extension ms-vscode.test-adapter-converter
+code --install-extension redhat.vscode-yaml
 code --install-extension shardulm94.trailing-spaces
-code --install-extension Tyriar.sort-lines
+code --install-extension tyriar.sort-lines
 code --install-extension waderyan.gitblame
 
 echo "=================================================="
@@ -158,6 +173,7 @@ echo "              Install the State Tool              "
 echo "=================================================="
 echo "=================================================="
 sh <(curl -q https://platform.activestate.com/dl/cli/install.sh)
+rm third_party/bin/state
 
 echo "=================================================="
 echo "=================================================="
